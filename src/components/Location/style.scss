@@ -1,0 +1,17 @@
+.location {
+  height: 80vh;
+  padding: 10px 5%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  .upper,
+  .lower {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .lower {
+    grid-template-columns: 1fr 1fr;
+  }
+}
