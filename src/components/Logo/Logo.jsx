@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from '../../imgs/Logo.jpeg' 
+import logo from '../../imgs/Logo.svg' 
 import './Logo.scss'
+
 
 export default function Logo() {
   return <div className='Logo'>
-      <img src="https://via.placeholder.com/100x40.png?text=Logo"/>
+      <img src={logo}/>
 
-      <h2>Triluxy</h2>
+      <h2>Booked</h2>
   </div>;
 }
