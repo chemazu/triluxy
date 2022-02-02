@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/triluxy/static/css/main.07f48c57.css",
-    "main.js": "/triluxy/static/js/main.428915f4.js",
+    "main.css": "/triluxy/static/css/main.3fd9a2e7.css",
+    "main.js": "/triluxy/static/js/main.73b39731.js",
     "static/js/787.d7ee46c0.chunk.js": "/triluxy/static/js/787.d7ee46c0.chunk.js",
+    "static/media/header-bg.jpg": "/triluxy/static/media/header-bg.a0c33f0c4e79633abb4b.jpg",
     "static/media/apartment.jpg": "/triluxy/static/media/apartment.189a473bc075da8d4ea4.jpg",
+    "static/media/villa.jpg": "/triluxy/static/media/villa.34b172ccbd618214e5f6.jpg",
+    "static/media/hotel.jpg": "/triluxy/static/media/hotel.426aa923d8f23687fbab.jpg",
+    "static/media/beach.jpg": "/triluxy/static/media/beach.d2d7767bc9417df20985.jpg",
+    "static/media/resort.jpg": "/triluxy/static/media/resort.364c7de7fcb3e7469584.jpg",
     "static/media/unitedkingdom.jpg": "/triluxy/static/media/unitedkingdom.ddfb192980e6e68f975f.jpg",
-    "static/media/Logo.jpeg": "/triluxy/static/media/Logo.9652d91924dfc797c7d4.jpeg",
     "static/media/close.svg": "/triluxy/static/media/close.f5457199865cf8c177ab311219383786.svg",
     "index.html": "/triluxy/index.html",
+    "static/media/Logo.svg": "/triluxy/static/media/Logo.3cee3250d57246f0db3796f7fa819469.svg",
     "static/media/menu-icon.svg": "/triluxy/static/media/menu-icon.1c1fe27bbd39ae96301a48dc6e7840c0.svg",
-    "main.07f48c57.css.map": "/triluxy/static/css/main.07f48c57.css.map",
-    "main.428915f4.js.map": "/triluxy/static/js/main.428915f4.js.map",
+    "main.3fd9a2e7.css.map": "/triluxy/static/css/main.3fd9a2e7.css.map",
+    "main.73b39731.js.map": "/triluxy/static/js/main.73b39731.js.map",
     "787.d7ee46c0.chunk.js.map": "/triluxy/static/js/787.d7ee46c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07f48c57.css",
-    "static/js/main.428915f4.js"
+    "static/css/main.3fd9a2e7.css",
+    "static/js/main.73b39731.js"
   ]
 }
