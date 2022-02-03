@@ -16,25 +16,30 @@
 //   }
 // }
 
-.location{
+.location {
   padding: 30px 5%;
   h2,
   p {
     margin-bottom: 16px;
   }
-
+}
+.locationCardWrapper {
+  display: grid;
+  grid-gap: 15px;
 }
 .upper,
-  .lower {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .lower {
-        grid-template-columns: 1fr 1fr;
-      }
+.lower {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.lower {
+  grid-template-columns: 1fr 1fr;
+}
 
-      @media screen and (max-width: 480px) {
-        .upper,
-  .lower {grid-template-columns: 1fr ;}
-      }
+@media screen and (max-width: 480px) {
+  .upper,
+  .lower {
+    grid-template-columns: 1fr;
+  }
+}

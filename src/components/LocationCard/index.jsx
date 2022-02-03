@@ -1,11 +1,13 @@
-import React from 'react';
-import "./style.scss"
+import React from "react";
+import "./style.scss";
 
-export default function LocationCard() {
-  return <div className='locationCard'>
-    <h2>Manchester United Kingdom</h2>
-<p>1,087 Hotels</p>
+export default function LocationCard(props) {
+  console.log(props.locationType.title);
 
-  </div>;
-  
+  return (
+    <div style={{ background: "red" }} className="locationCard">
+      <h2>{props.locationType.title}</h2>
+      <p>1,087 Hotels</p>
+    </div>
+  );
 }
