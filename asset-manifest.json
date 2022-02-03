@@ -1,25 +1,29 @@
 {
   "files": {
-    "main.css": "/triluxy/static/css/main.3fd9a2e7.css",
-    "main.js": "/triluxy/static/js/main.73b39731.js",
+    "main.css": "/triluxy/static/css/main.f1032732.css",
+    "main.js": "/triluxy/static/js/main.cf126344.js",
     "static/js/787.d7ee46c0.chunk.js": "/triluxy/static/js/787.d7ee46c0.chunk.js",
     "static/media/header-bg.jpg": "/triluxy/static/media/header-bg.a0c33f0c4e79633abb4b.jpg",
+    "static/media/berlin.jpg": "/triluxy/static/media/berlin.42324fb9ced9e9733170.jpg",
     "static/media/apartment.jpg": "/triluxy/static/media/apartment.189a473bc075da8d4ea4.jpg",
+    "static/media/ghana.jpg": "/triluxy/static/media/ghana.f81f333802af1a360c8a.jpg",
+    "static/media/rome.jpg": "/triluxy/static/media/rome.b1440576eacd1a8b5124.jpg",
     "static/media/villa.jpg": "/triluxy/static/media/villa.34b172ccbd618214e5f6.jpg",
+    "static/media/manchester.jpg": "/triluxy/static/media/manchester.b8c09737e7ae6d76562b.jpg",
+    "static/media/sydney.jpg": "/triluxy/static/media/sydney.9a15369e30930c0398a6.jpg",
     "static/media/hotel.jpg": "/triluxy/static/media/hotel.426aa923d8f23687fbab.jpg",
     "static/media/beach.jpg": "/triluxy/static/media/beach.d2d7767bc9417df20985.jpg",
     "static/media/resort.jpg": "/triluxy/static/media/resort.364c7de7fcb3e7469584.jpg",
-    "static/media/unitedkingdom.jpg": "/triluxy/static/media/unitedkingdom.ddfb192980e6e68f975f.jpg",
     "static/media/close.svg": "/triluxy/static/media/close.f5457199865cf8c177ab311219383786.svg",
     "index.html": "/triluxy/index.html",
     "static/media/Logo.svg": "/triluxy/static/media/Logo.3cee3250d57246f0db3796f7fa819469.svg",
     "static/media/menu-icon.svg": "/triluxy/static/media/menu-icon.1c1fe27bbd39ae96301a48dc6e7840c0.svg",
-    "main.3fd9a2e7.css.map": "/triluxy/static/css/main.3fd9a2e7.css.map",
-    "main.73b39731.js.map": "/triluxy/static/js/main.73b39731.js.map",
+    "main.f1032732.css.map": "/triluxy/static/css/main.f1032732.css.map",
+    "main.cf126344.js.map": "/triluxy/static/js/main.cf126344.js.map",
     "787.d7ee46c0.chunk.js.map": "/triluxy/static/js/787.d7ee46c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fd9a2e7.css",
-    "static/js/main.73b39731.js"
+    "static/css/main.f1032732.css",
+    "static/js/main.cf126344.js"
   ]
 }
