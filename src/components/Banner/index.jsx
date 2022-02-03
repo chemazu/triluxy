@@ -58,7 +58,7 @@ export default function Banner() {
         </div>
       </form>
       {/* <input type="submit" placeholder="Check in" value="search" /> */}
-      <Button title="Search"/>
+      <Button title="Find Hotel"/>
 
     </div>
   );

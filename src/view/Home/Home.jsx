@@ -15,7 +15,11 @@ export default function Home() {
         title="Browse by hotel type"
         subtext="These popular hotels have a lot to offer"
       />
-      <Location />
+      <Location title="Popular cities with travellers"
+        subtext="See the top destinations people are traveling to"/>
+        
+
+ 
       <Browse
         title="Browse popular locations"
         subtext="These popular locations have a lot to offer"
