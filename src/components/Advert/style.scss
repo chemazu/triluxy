@@ -1,0 +1,22 @@
+.advert {
+  padding: 10px 10%;
+  text-align: end;
+
+  display: flex;
+  justify-content: center;
+  color: #febb02;
+  div {
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    padding: 10px 10px;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  //   display: grid;
+  //   grid-template-columns: 1fr 12fr;
+}

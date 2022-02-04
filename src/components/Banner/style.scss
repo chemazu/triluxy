@@ -19,19 +19,18 @@
     // border-right: 0px;
     color: black;
   }
-  .info-search,.place-search {
+  .info-search,
+  .place-search {
     border: 5px solid #febb02;
-
   }
-  
 }
-.date-search{
+.date-search {
   border-top: 5px solid #febb02;
   border-bottom: 5px solid #febb02;
 }
 form {
   display: grid;
-  grid-template-columns: 2fr 2fr 3fr;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 16px;
 }
 
@@ -61,13 +60,12 @@ form {
     display: flex;
     // border: 5px solid #febb02;
   }
-  .banner{
+  .banner {
     padding-top: 15vh;
   }
-  .date-search{
+  .date-search {
     border: 0px;
     border-left: 5px solid #febb02;
     border-right: 5px solid #febb02;
   }
-
 }
