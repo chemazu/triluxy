@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/triluxy/static/css/main.f1032732.css",
-    "main.js": "/triluxy/static/js/main.cf126344.js",
+    "main.css": "/triluxy/static/css/main.793911f5.css",
+    "main.js": "/triluxy/static/js/main.2d0d3c4d.js",
     "static/js/787.d7ee46c0.chunk.js": "/triluxy/static/js/787.d7ee46c0.chunk.js",
     "static/media/header-bg.jpg": "/triluxy/static/media/header-bg.a0c33f0c4e79633abb4b.jpg",
     "static/media/berlin.jpg": "/triluxy/static/media/berlin.42324fb9ced9e9733170.jpg",
@@ -15,15 +15,16 @@
     "static/media/beach.jpg": "/triluxy/static/media/beach.d2d7767bc9417df20985.jpg",
     "static/media/resort.jpg": "/triluxy/static/media/resort.364c7de7fcb3e7469584.jpg",
     "static/media/close.svg": "/triluxy/static/media/close.f5457199865cf8c177ab311219383786.svg",
+    "static/media/info.svg": "/triluxy/static/media/info.d2cba85bb657a826a21bc98ff914ed4a.svg",
     "index.html": "/triluxy/index.html",
     "static/media/Logo.svg": "/triluxy/static/media/Logo.3cee3250d57246f0db3796f7fa819469.svg",
     "static/media/menu-icon.svg": "/triluxy/static/media/menu-icon.1c1fe27bbd39ae96301a48dc6e7840c0.svg",
-    "main.f1032732.css.map": "/triluxy/static/css/main.f1032732.css.map",
-    "main.cf126344.js.map": "/triluxy/static/js/main.cf126344.js.map",
+    "main.793911f5.css.map": "/triluxy/static/css/main.793911f5.css.map",
+    "main.2d0d3c4d.js.map": "/triluxy/static/js/main.2d0d3c4d.js.map",
     "787.d7ee46c0.chunk.js.map": "/triluxy/static/js/787.d7ee46c0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1032732.css",
-    "static/js/main.cf126344.js"
+    "static/css/main.793911f5.css",
+    "static/js/main.2d0d3c4d.js"
   ]
 }
