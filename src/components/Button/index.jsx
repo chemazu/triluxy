@@ -2,7 +2,8 @@ import React from 'react';
 import './style.scss'
 
 export default function Button(props) {
+  const {title , onClick}= props
   return <div>
-      <button>{props.title}</button>
+      <button onClick={onClick}>{title}</button>
   </div>;
 }

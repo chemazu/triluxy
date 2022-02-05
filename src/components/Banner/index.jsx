@@ -3,31 +3,40 @@ import Button from "../Button";
 import "./style.scss";
 
 export default function Banner() {
+  const onClick = () => {
+    console.log("click");
+  };
+  const value =[]
+  const handleSubmit=e=>{
+    e.preventDefault()
+    console.log("submitted")
+  }
   return (
     <div className="banner">
       <h1> Find your next stay</h1>
       <p>Search deals on hotels, homes, and much more...</p>
       <form>
         <div className="place-search">
-        <div className="search-item">
-          <label>Where are you going ? </label>
-          <input
-            type="text"
-            list="listid"
-            placeholder="Where are you going ?"
-          />
-          <datalist id="listid">
-            <option label="Popular Destinations" value="&zwnj;" />{" "}
-            {/* write a condition for this , incase someone sends this above empty value */}
-            <option value="Abuja " label="Nigeria" />
-            <option value="Lagos" label="Nigeria" />
-            <option value="Ikeja" label="Nigeria" />
-            <option value="Lekki" label="Nigeria" />
-            <option value="Ibadan" label="Nigeria" />
-          </datalist>
+          <div className="search-item">
+            <label>Where are you going ? </label>
+            <input
+              type="text"
+              list="listid"
+              placeholder="Where are you going ?"
+              value={value}
+            />
+            <datalist id="listid">
+              <option label="Popular Destinations" value="&zwnj;" />{" "}
+              {/* write a condition for this , incase someone sends this above empty value */}
+              <option value="Abuja " label="Nigeria" />
+              <option value="Lagos" label="Nigeria" />
+              <option value="Ikeja" label="Nigeria" />
+              <option value="Lekki" label="Nigeria" />
+              <option value="Ibadan" label="Nigeria" />
+            </datalist>
+          </div>
         </div>
-        </div>
-        
+
         <div className="date-search">
           <div className="search-item">
             <label>Check-in </label>
@@ -58,8 +67,7 @@ export default function Banner() {
         </div>
       </form>
       {/* <input type="submit" placeholder="Check in" value="search" /> */}
-      <Button title="Find Hotel"/>
-
+      <Button title="Find Hotel" onClick={onClick} />
     </div>
   );
 }
