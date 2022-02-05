@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import Banner from "../../components/Banner";
 import Browse from "../../components/Browse";
 import Header from "../../components/Header/Header";
@@ -8,6 +8,10 @@ import Advert from "../../components/Advert";
 import "./Home.scss";
 
 export default function Home() {
+  useEffect(() => {
+      console.log('eggs')
+  });
+
   return (
     <div>
       <Banner />

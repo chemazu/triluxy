@@ -2,14 +2,19 @@
   padding: 20px 5%;
   background: cornflowerblue;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1,
-  p,
+  
   span,
   input {
     margin-bottom: 16px;
   }
+
   input[type="email"] {
     width: 50%;
     padding: 7.5px;
   }
+
 }

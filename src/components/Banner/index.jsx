@@ -1,16 +1,33 @@
-import React from "react";
+import React, {useState}from "react";
+import { useInput } from "../../hooks/input-hook";
 import Button from "../Button";
 import "./style.scss";
 
 export default function Banner() {
-  const onClick = () => {
-    console.log("click");
-  };
-  const value =[]
-  const handleSubmit=e=>{
+  
+
+  const {value:where, change:changeWhere,reset: resetWhere} = useInput('')
+  const {value:checkIn, change:changeCheckIn,reset: resetCheckIn} = useInput('')
+  const {value:checkOut, change:changeCheckOut,reset: resetCheckOut} = useInput('')
+  const {value:adult, change:changeAdult,reset: resetAdult} = useInput('')
+  const {value:children, change:changeChildren,reset: resetChildren} = useInput('')
+  const {value:room, change:changeRoom,reset: resetRoom} = useInput('')
+
+  const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("submitted")
-  }
+    console.log(where,checkIn,checkOut,adult,room);
+    resetWhere()
+    resetAdult()
+    resetCheckIn()
+    resetCheckOut()
+    resetRoom()
+    resetChildren()
+
+    
+  };
+
+
+
   return (
     <div className="banner">
       <h1> Find your next stay</h1>
@@ -21,9 +38,9 @@ export default function Banner() {
             <label>Where are you going ? </label>
             <input
               type="text"
-              list="listid"
-              placeholder="Where are you going ?"
-              value={value}
+              list="listid" {...changeWhere}
+              placeholder="Where are you going?"
+    
             />
             <datalist id="listid">
               <option label="Popular Destinations" value="&zwnj;" />{" "}
@@ -40,34 +57,35 @@ export default function Banner() {
         <div className="date-search">
           <div className="search-item">
             <label>Check-in </label>
-            <input type="date" />
+            <input type="date" {...changeCheckIn}/>
           </div>
           <div className="search-item">
             <label>Check-out </label>
-            <input type="date" />
+            <input type="date" {...changeCheckOut}/>
           </div>
         </div>
 
         <div className="info-search">
           <div className="search-item">
             <label>adults </label>
-            <input type="number" placeholder="adults" />
+            <input type="number" placeholder="adults" {...changeAdult}/>
           </div>
 
           <div className="search-item">
             <label>children</label>
 
-            <input type="number" placeholder="children" />
+            <input type="number" placeholder="children" {...changeChildren}/>
           </div>
           <div className="search-item">
             <label>rooms </label>
 
-            <input type="number" placeholder="rooms" />
+            <input type="number" placeholder="rooms" {...changeRoom}/>
           </div>
         </div>
       </form>
       {/* <input type="submit" placeholder="Check in" value="search" /> */}
-      <Button title="Find Hotel" onClick={onClick} />
+      <Button title="Find Hotel" onClick={handleSubmit} />
     </div>
   );
+  
 }
