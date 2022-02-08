@@ -6,7 +6,6 @@ import apartment from "../../imgs/apartment.jpg";
 import beach from "../../imgs/beach.jpg";
 import villa from "../../imgs/villa.jpg";
 import resort from "../../imgs/resort.jpg";
-import cabin from "../../imgs/apartment.jpg";
 
 export default function Browse(props) {
   const { title, subtext } = props;

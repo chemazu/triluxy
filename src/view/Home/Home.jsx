@@ -1,7 +1,6 @@
 import React,{useEffect} from "react";
 import Banner from "../../components/Banner";
 import Browse from "../../components/Browse";
-import Header from "../../components/Header/Header";
 import Location from "../../components/Location";
 import Subscribe from "../../components/Subscribe";
 import Advert from "../../components/Advert";

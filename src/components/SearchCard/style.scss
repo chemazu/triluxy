@@ -1,0 +1,38 @@
+.search-card{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    max-width: 45vw;
+    height: 200px;
+    background: #fff;
+    // box-shadow: 5px 5px 17px #888888;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    div{
+        width: 100%;
+    }
+    border :1px solid black;
+    .search-image{
+        background:url('../../imgs/cabin.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    .search-info,.search-actions{
+        padding: 10px 10px;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+.address{
+    padding-top: 10px;
+}
+.amenities{
+    padding-top:10px;
+    display: flex;
+    justify-content: space-evenly;
+    img{
+        width: 25px;
+        height: 25px;
+    }
+}

@@ -1,4 +1,39 @@
 .searchResults {
+  background:#eaf0f3;
   margin-top: 50px;
-  padding: 10px 5%;
+  padding: 10px ;
+  padding-top: 0;
+  .result-bar {
+    height: 40px;
+    background-color: blue;
+    margin-left:-5%;
+    width: 110%;
+  }
+  .result-content {
+    padding: 5vw 10vw;
+  grid-template-columns: 3fr 8fr 2fr;
+  grid-column-gap: 50px;
+  display: grid;
+
+
+    .filter {
+      background-color: #fff;
+      // width: 100%;
+      padding: 20px;
+      height: 60vh;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    
+
+
+
+    }
+    .results {
+      width: 100%;
+      display: grid;
+      grid-row-gap: 50px;
+    }
+  }
+}
+.sort{
+  display: flex;
 }
