@@ -1,5 +1,36 @@
-.show,.hidden{
-    display: flex;
-    width: 100%;
+.search{
     justify-content: space-between;
+}
+.filter-action{
+    padding: 5px;
+    border:1px solid grey;
+    border-bottom: 0px;
+    background-color: #eaf0f3;
+    font-size: 70%;
+    h4{
+        padding-bottom: 5px;
+    }
+
+    
+}
+
+.filter-subaction{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 5px;
+
+} 
+.star{
+    margin-top: 15px;
+}
+.filter-amenities , .review{
+    
+    div{justify-content: left;
+    input{margin-right: 20px;}}
+
+}
+.review{
+    border-bottom :1px solid grey;
+
 }

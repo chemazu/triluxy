@@ -5,22 +5,26 @@
   padding-top: 0;
   .result-bar {
     height: 40px;
-    background-color: blue;
+    padding: 7.5px;
     margin-left:-5%;
     width: 110%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0071c2;
   }
   .result-content {
     padding: 5vw 10vw;
-  grid-template-columns: 3fr 8fr 2fr;
+  grid-template-columns: 3fr 8fr;
   grid-column-gap: 50px;
   display: grid;
 
 
     .filter {
       background-color: #fff;
+      height: 75vh;
       // width: 100%;
       padding: 20px;
-      height: 60vh;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     
 
@@ -34,6 +38,32 @@
     }
   }
 }
+.price{
+  display: grid;
+  width:90%;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  div{
+    border:2px solid #003580;
+    padding :2.5px;
+    text-align: center;
+    border-right:0px;
+  }
+  .last{
+    border-right:2px solid #003580;
+
+  }
+}
 .sort{
-  display: flex;
+  h2{
+    padding-bottom: 20px;
+    display: inline;
+    font-weight:900;
+  }
+  span{
+    font-size: 1.1em;
+    font-weight:900;
+
+
+  }
 }

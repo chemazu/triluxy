@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter>
-      {/* <BrowserRouter basename="/calendar"/> */}
+    {/* <HashRouter> */}
+      <BrowserRouter>
       <App />
-    </HashRouter>
+      </BrowserRouter>
+    {/* </HashRouter> */}
+
   </React.StrictMode>,
   document.getElementById("root")
 );
