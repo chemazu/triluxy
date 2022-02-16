@@ -23,11 +23,12 @@
   .place-search {
     border: 5px solid #febb02;
   }
+  .date-search {
+    border-top: 5px solid #febb02;
+    border-bottom: 5px solid #febb02;
+  }
 }
-.date-search {
-  border-top: 5px solid #febb02;
-  border-bottom: 5px solid #febb02;
-}
+
 form {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

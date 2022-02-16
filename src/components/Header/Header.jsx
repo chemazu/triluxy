@@ -5,6 +5,7 @@ import menu from "../../imgs/menu-icon.svg";
 import close from "../../imgs/close.svg";
 
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [showResults, setShowResults] = React.useState(false);
@@ -25,8 +26,12 @@ export default function Header() {
           <p>Restaurant</p>
         </div>
         <div className="auth">
-          <Button title="Login" />
-          <Button title="Register" />
+        <Link to ="/login">
+              <Button title="Login" />
+              </Link>
+              <Link to ="/register">
+              <Button title="Register" />
+              </Link>
         </div>
       </div>
       <div className="mob-nav-wrapper">
@@ -47,8 +52,12 @@ export default function Header() {
               <p>Restaurant</p>
             </div>
             <div className="auth">
+              <Link to ="/login">
               <Button title="Login" />
+              </Link>
+              <Link to ="/register">
               <Button title="Register" />
+              </Link>
             </div>
           </div>
         ) : null}

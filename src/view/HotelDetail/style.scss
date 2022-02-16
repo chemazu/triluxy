@@ -1,4 +1,32 @@
 .hotel-detail{
   margin-top: 50px;
 
+  .search{
+
+  padding: 10vh 5%;
+  background: url(../../imgs/header-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+
+  .place-search,
+  .date-search,
+  .info-search {
+    display: flex;
+    // border: 5px solid #febb02;
+    // border-right: 0px;
+    padding: 5px;
+    color: black;
+    background: #fff;
+  }
+  .info-search,
+  .place-search {
+    border: 5px solid #febb02;
+  }
+  .date-search {
+    border-top: 5px solid #febb02;
+    border-bottom: 5px solid #febb02;
+  }
+  }
+
 }
