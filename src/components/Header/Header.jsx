@@ -19,6 +19,7 @@ export default function Header() {
     <div className="header">
       <div className="nav">
         <Logo />
+
         <div className="menu-items">
           <p>Stays</p>
           <p>Flights</p>
