@@ -1,0 +1,22 @@
+.counter{
+    width: 150px;
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    align-items: center;
+    text-align: center;
+    background-color:#0071c2;
+    color:#fff;
+    font-weight: bolder;
+    button{
+        min-width: 20px;
+    }
+
+}
+
+.addBooking{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-row-gap:5px;
+    padding-top: 10px;
+}

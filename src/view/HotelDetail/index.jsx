@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.scss";
 import { useInput } from "../../hooks/input-hook";
 import Button from "../../components/Button";
@@ -7,7 +7,10 @@ import bar from "../../imgs/bar.svg";
 import RoomOption from "../../components/RoomOption";
 
 export default function HotelDetail() {
-  const { value: where, change: changeWhere, reset: resetWhere } = useInput("");
+  const [changeBooking, setChangeBooking] = useState(false);
+  const [roomInfo, setRoomInfo] = useState("");
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [count, setCount] = useState(1);
   const {
     value: checkIn,
     change: changeCheckIn,
@@ -24,18 +27,25 @@ export default function HotelDetail() {
     change: changeChildren,
     reset: resetChildren,
   } = useInput("");
-  const { value: room, change: changeRoom, reset: resetRoom } = useInput("");
+  const bookingDetails = {
+    roomInfo,
+    count: count - 1,
+    totalPrice,
+    checkIn,
+    checkOut,
+    adult,
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(where, checkIn, checkOut, adult, room);
-    resetWhere();
+
+    console.log(bookingDetails);
     resetAdult();
     resetCheckIn();
     resetCheckOut();
-    resetRoom();
     resetChildren();
   };
+
   const hotelDetail = {
     title: "Lagos Marriott Hotel Ikeja",
     address: "122 Joel Ogunnaike St, GRA 100271, Ikeja Phone: 0908 825 2020",
@@ -43,22 +53,25 @@ export default function HotelDetail() {
       "Flanked by palm trees, this upscale hotel is 1 km from Ikeja Golf Club and 7 km from Murtala Muhammed International Airport.There's a lobby bar, an informal grill, and a buffet restaurant featuring a terrace",
     roomTypes: [
       {
+        slug: "doubleRoom",
         title: "Double Room with Two Double Beds",
-        price: "100,622",
+        price: 10000,
         size: "34 m²",
         bed: "2 double beds",
         bath: "Jacuzzi , Shower, Half Bath",
       },
       {
+        slug: "kingRoom",
         title: "King Guest Room",
-        price: "100,622",
+        price: 20000,
         size: "34 m²",
         bed: "2 double beds",
         bath: "Jacuzzi , Shower, Half Bath",
       },
       {
+        slug: "juniorRoom",
         title: "Junior King Suite",
-        price: "100,622",
+        price: 30000,
         size: "34 m²",
         bed: "2 double beds",
         bath: "Jacuzzi , Shower, Half Bath",
@@ -67,62 +80,9 @@ export default function HotelDetail() {
   };
   const { title, address, shortdescription, longDescription, roomTypes } =
     hotelDetail;
+
   return (
     <div className="hotel-detail">
-      <div className="search">
-        <form onSubmit={handleSubmit}>
-          <div className="place-search">
-            <div className="search-item">
-              <label>Where are you going ? </label>
-              <input
-                type="text"
-                list="listid"
-                {...changeWhere}
-                placeholder="Where are you going?"
-              />
-              <datalist id="listid">
-                <option label="Popular Destinations" value="&zwnj;" />{" "}
-                {/* write a condition for this , incase someone sends this above empty value */}
-                <option value="Abuja " label="Nigeria" />
-                <option value="Lagos" label="Nigeria" />
-                <option value="Ikeja" label="Nigeria" />
-                <option value="Lekki" label="Nigeria" />
-                <option value="Ibadan" label="Nigeria" />
-              </datalist>
-            </div>
-          </div>
-
-          <div className="date-search">
-            <div className="search-item">
-              <label>Check-in </label>
-              <input type="date" {...changeCheckIn} />
-            </div>
-            <div className="search-item">
-              <label>Check-out </label>
-              <input type="date" {...changeCheckOut} />
-            </div>
-          </div>
-
-          <div className="info-search">
-            <div className="search-item">
-              <label>adults </label>
-              <input type="number" placeholder="adults" {...changeAdult} />
-            </div>
-
-            <div className="search-item">
-              <label>children</label>
-
-              <input type="number" placeholder="children" {...changeChildren} />
-            </div>
-            <div className="search-item">
-              <label>rooms </label>
-
-              <input type="number" placeholder="rooms" {...changeRoom} />
-            </div>
-          </div>
-          <Button type="submit" title="Find Hotel" />
-        </form>
-      </div>
       <div className="hotel-title">
         <h1>{title}</h1>
         <p>Address: {address}</p>
@@ -133,6 +93,20 @@ export default function HotelDetail() {
         <div className="hotel-summary">
           <h2>Hotel Details</h2>
           <div className="map"></div>
+          <div className="hotel-type">
+            <div>
+              <strong>Hotel Type</strong>
+              <p>Suites</p>
+            </div>
+            <div>
+              <strong>Number of Rooms</strong>
+              <p>169</p>
+            </div>
+            <div>
+              <strong>Room Types</strong>
+              <p>5</p>
+            </div>
+          </div>
           <div className="amenities-detail">
             <div className="single-amenity">
               <img src={bar} alt="bar" />
@@ -165,21 +139,6 @@ export default function HotelDetail() {
             <div className="single-amenity">
               <img src={bar} alt="bar" />
               <p>Bar/Lounge</p>
-            </div>
-          </div>
-
-          <div className="hotel-type">
-            <div>
-              <strong>Hotel Type</strong>
-              <p>Suites</p>
-            </div>
-            <div>
-              <strong>Number of Rooms</strong>
-              <p>169</p>
-            </div>
-            <div>
-              <strong>Room Types</strong>
-              <p>5</p>
             </div>
           </div>
         </div>
@@ -222,10 +181,67 @@ export default function HotelDetail() {
           </div>
         </div>
         <div className="room-booking">
-          Select a room type and the number of rooms you want to reserve.
+          <h4>
+            Select a room type and the number of rooms you want to reserve.
+          </h4>
+          <div className="search">
+            <form onSubmit={handleSubmit}>
+              <div className="date-search">
+                <div className="search-item">
+                  <label>Check-in </label>
+                  <input type="date" {...changeCheckIn} />
+                </div>
+                <div className="search-item">
+                  <label>Check-out </label>
+                  <input type="date" {...changeCheckOut} />
+                </div>
+              </div>
+
+              <div className="info-search">
+                <div className="search-item">
+                  <label>adults </label>
+                  <input type="number" placeholder="adults" {...changeAdult} />
+                </div>
+
+                <div className="search-item">
+                  <label>children</label>
+
+                  <input
+                    type="number"
+                    placeholder="children"
+                    {...changeChildren}
+                  />
+                </div>
+              </div>
+              {changeBooking ? (
+                <div className="addBooking">
+                  <p>{count - 1}Rooms 1 Night</p>
+                  <p>AMOUNT:{totalPrice}</p>
+                  <Button onClick={handleSubmit} title="Book Now" />
+                </div>
+              ) : null}
+            </form>
+          </div>
           {roomTypes.map((roomType) => (
-            <RoomOption roomType={roomType} />
+            <RoomOption
+              roomType={roomType}
+              setBooking={setChangeBooking}
+              key={roomType.slug}
+              getRoom={roomInfo}
+              setRoom={setRoomInfo}
+              count={count}
+              setCount={setCount}
+              totalPrice={totalPrice}
+              setTotalPrice={setTotalPrice}
+            />
           ))}
+          {changeBooking ? (
+            <div className="addBooking">
+              <p>{count - 1}Rooms 1 Night</p>
+              <p>AMOUNT:{totalPrice}</p>
+              <Button onClick={handleSubmit} title="Book Now" />
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

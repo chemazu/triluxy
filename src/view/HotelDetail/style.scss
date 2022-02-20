@@ -1,133 +1,120 @@
 .hotel-detail {
   margin-top: 50px;
-
-  .search {
-    display: none;
-    padding: 10px 5%;
-    padding-bottom: 0x  px;
-
-    
-    color: #fff;
-    border :1px solid black;
-
-    .place-search,
-    .date-search,
-    .info-search {
-      display: flex;
-      // border: 5px solid #febb02;
-      // border-right: 0px;
-      padding: 5px;
-      color: black;
-      background: #fff;
-    }
-    .info-search,
-    .place-search {
-      border: 5px solid #febb02;
-    }
-    .date-search {
-      border-top: 5px solid #febb02;
-      border-bottom: 5px solid #febb02;
-    }
-  }
-  .hotel-title{
+  .hotel-title {
     padding: 30px 5%;
-    display:grid;
-    grid-row-gap:10px;p{
+    display: grid;
+    grid-row-gap: 10px;
+    p {
       width: 70%;
     }
-
   }
-  .gallery{
+  .gallery {
     padding: 50px 5%;
     display: grid;
     grid-template-columns: 2fr 3fr;
     height: 62vh;
-    .hotel-summary{
+    .hotel-summary {
       padding: 25px 40px;
       background-color: #eaf0f3;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       // padding-bottom: 100px;
-      .map{
-        background: url('../../imgs/GoogleMap.jpg');
+      .map {
+        background: url("../../imgs/GoogleMap.jpg");
         background-position: center;
-    background-size: cover;
-    height:120px;
+        background-size: cover;
+        height: 120px;
       }
-      .amenities-detail{
+      .amenities-detail {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 40px;
         padding: 10px 0px;
-        .single-amenity{
+        .single-amenity {
           text-align: center;
-          img{
-            width:15px;
+          img {
+            width: 15px;
           }
-          p{
-        font-size: 12px;
-
+          p {
+            font-size: 12px;
           }
         }
       }
-      .hotel-type{
+      .hotel-type {
         display: flex;
         justify-content: space-between;
-        div{
+        div {
           text-align: center;
         }
       }
-
     }
   }
-  .description{
+  .description {
     padding: 10px 5%;
-
     display: grid;
     grid-template-columns: 5fr 3fr;
-    grid-gap:150px;
-    .description-text{
+    grid-gap: 150px;
+    .description-text {
       display: grid;
       grid-row-gap: 10px;
-      // height: 350px;
     }
-    .terms{
+    .terms {
       display: grid;
       grid-row-gap: 15px;
-      
     }
   }
-  .room-booking{
-    border:2px solid grey;
+  .room-booking {
+    border: 2px solid grey;
     padding: 20px;
-    .room-options{
+    display: grid;
+    grid-template-columns: 1fr;
+    .search {
+      padding-top: 20px;
+      form {
+        grid-template-columns: 1fr;
+        
+        .date-search,
+        .info-search {
+          display: flex;
+          border: 5px solid #febb02;
+        }
+        .date-search {
+          border: 5px solid #febb02;
+
+          border-bottom: 0px;
+
+        }
+      }
+    }
+    .room-options {
       padding: 15px;
       display: grid;
       grid-row-gap: 20px;
       border-bottom: 1px solid #febb02;
       border-top: 1px solid #febb02;
-      &:hover{
-      border: 2px solid #febb02;
+      &:hover {
+        border: 2px solid #febb02;
 
-        background:#eaf0f3 ;
+        background: #eaf0f3;
       }
 
-      .top{
+      .top {
         display: grid;
         grid-template-columns: 7fr 3fr;
       }
-      .middle{
+      .middle {
         display: flex;
         justify-content: space-between;
       }
-      .bottom{
+      .bottom {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 5px;
-
       }
+    }
+    button{
+      width: 100%;
     }
   }
 }
-
