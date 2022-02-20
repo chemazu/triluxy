@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import HotelDetail from "./view/HotelDetail";
 import Register from "./view/Register";
 import Login from "./view/Login";
+import Booking from "./view/Booking";
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route path="/hotel" element={<HotelDetail />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
+        <Route path="/booking" element={<Booking/>} />
+
 
 
 
