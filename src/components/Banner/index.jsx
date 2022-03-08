@@ -1,30 +1,38 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 import { useInput } from "../../hooks/input-hook";
 import Button from "../Button";
 import "./style.scss";
 
 export default function Banner() {
-  
-
-  const {value:where, change:changeWhere,reset: resetWhere} = useInput('')
-  const {value:checkIn, change:changeCheckIn,reset: resetCheckIn} = useInput('')
-  const {value:checkOut, change:changeCheckOut,reset: resetCheckOut} = useInput('')
-  const {value:adult, change:changeAdult,reset: resetAdult} = useInput('')
-  const {value:children, change:changeChildren,reset: resetChildren} = useInput('')
-  const {value:room, change:changeRoom,reset: resetRoom} = useInput('')
+  const { value: where, change: changeWhere, reset: resetWhere } = useInput("");
+  const {
+    value: checkIn,
+    change: changeCheckIn,
+    reset: resetCheckIn,
+  } = useInput("");
+  const {
+    value: checkOut,
+    change: changeCheckOut,
+    reset: resetCheckOut,
+  } = useInput("");
+  const { value: adult, change: changeAdult, reset: resetAdult } = useInput("");
+  const {
+    value: children,
+    change: changeChildren,
+    reset: resetChildren,
+  } = useInput("");
+  const { value: room, change: changeRoom, reset: resetRoom } = useInput("");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(where,checkIn,checkOut,adult,room);
-    resetWhere()
-    resetAdult()
-    resetCheckIn()
-    resetCheckOut()
-    resetRoom()
-    resetChildren()
+    e.preventDefault();
+    console.log(where, checkIn, checkOut, adult, room);
+    resetWhere();
+    resetAdult();
+    resetCheckIn();
+    resetCheckOut();
+    resetRoom();
+    resetChildren();
   };
-
-
 
   return (
     <div className="banner">
@@ -36,9 +44,9 @@ export default function Banner() {
             <label>Where are you going ? </label>
             <input
               type="text"
-              list="listid" {...changeWhere}
+              list="listid"
+              {...changeWhere}
               placeholder="Where are you going?"
-    
             />
             <datalist id="listid">
               <option label="Popular Destinations" value="&zwnj;" />{" "}
@@ -55,29 +63,29 @@ export default function Banner() {
         <div className="date-search">
           <div className="search-item">
             <label>Check-in </label>
-            <input type="date" {...changeCheckIn}/>
+            <input type="date" {...changeCheckIn} />
           </div>
           <div className="search-item">
             <label>Check-out </label>
-            <input type="date" {...changeCheckOut}/>
+            <input type="date" {...changeCheckOut} />
           </div>
         </div>
 
         <div className="info-search">
           <div className="search-item">
             <label>adults </label>
-            <input type="number" placeholder="adults" {...changeAdult}/>
+            <input type="number" placeholder="adults" {...changeAdult} />
           </div>
 
           <div className="search-item">
             <label>children</label>
 
-            <input type="number" placeholder="children" {...changeChildren}/>
+            <input type="number" placeholder="children" {...changeChildren} />
           </div>
           <div className="search-item">
             <label>rooms </label>
 
-            <input type="number" placeholder="rooms" {...changeRoom}/>
+            <input type="number" placeholder="rooms" {...changeRoom} />
           </div>
         </div>
       </form>
@@ -85,5 +93,4 @@ export default function Banner() {
       <Button title="Find Hotel" onClick={handleSubmit} />
     </div>
   );
-  
 }

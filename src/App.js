@@ -1,7 +1,7 @@
 import "./App.scss";
 import Home from "./view/Home/Home";
 import Search from "./view/Search";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import HotelDetail from "./view/HotelDetail";
 import Register from "./view/Register";
@@ -16,18 +16,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/hotel" element={<HotelDetail />} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/register" element={<Register/>} />
-        <Route path="/booking" element={<Booking/>} />
-
-
-
-
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/booking" element={<Booking />} />
       </Routes>
-
-      {/* <Header />
-        <Route path="/" component={Home} />
-        <Route path="/search" component={Search} /> */}
     </div>
   );
 }

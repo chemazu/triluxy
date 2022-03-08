@@ -6,9 +6,11 @@ import close from "../../imgs/close.svg";
 
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import useSearch from "../../hooks/search-hook";
 
 export default function Header() {
   const [showResults, setShowResults] = React.useState(false);
+
   const openMenu = () => {
     setShowResults(true);
   };
@@ -27,12 +29,12 @@ export default function Header() {
           <p>Restaurant</p>
         </div>
         <div className="auth">
-        <Link to ="/login">
-              <Button title="Login" />
-              </Link>
-              <Link to ="/register">
-              <Button title="Register" />
-              </Link>
+          <Link to="/login">
+            <Button title="Login" />
+          </Link>
+          <Link to="/register">
+            <Button title="Register" />
+          </Link>
         </div>
       </div>
       <div className="mob-nav-wrapper">
@@ -53,11 +55,11 @@ export default function Header() {
               <p>Restaurant</p>
             </div>
             <div className="auth">
-              <Link to ="/login">
-              <Button title="Login" />
+              <Link to="/login">
+                <Button title="Login" />
               </Link>
-              <Link to ="/register">
-              <Button title="Register" />
+              <Link to="/register">
+                <Button title="Register" />
               </Link>
             </div>
           </div>
