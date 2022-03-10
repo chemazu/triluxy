@@ -7,19 +7,24 @@ import HotelDetail from "./view/HotelDetail";
 import Register from "./view/Register";
 import Login from "./view/Login";
 import Booking from "./view/Booking";
+import { SearchContext } from "./context/SearchContext";
+import { useState } from "react";
 
 function App() {
+  const [searchResult, setSearchResult] = useState({});
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/hotel" element={<HotelDetail />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/booking" element={<Booking />} />
-      </Routes>
+      <SearchContext.Provider value={{ searchResult, setSearchResult }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/hotel" element={<HotelDetail />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/booking" element={<Booking />} />
+        </Routes>
+      </SearchContext.Provider>
     </div>
   );
 }

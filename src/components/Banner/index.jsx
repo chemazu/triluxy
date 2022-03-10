@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useInput } from "../../hooks/input-hook";
+import { SearchContext } from "../../context/SearchContext";
+
 import Button from "../Button";
 import "./style.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function Banner() {
-  const { value: where, change: changeWhere, reset: resetWhere } = useInput("");
+  const history = useNavigate();
+
+  const context = useContext(SearchContext);
+  const { searchResult, setSearchResult } = context;
+  const {
+    value: location,
+    change: changeLocation,
+    reset: resetLocation,
+  } = useInput("");
   const {
     value: checkIn,
     change: changeCheckIn,
@@ -25,13 +36,15 @@ export default function Banner() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(where, checkIn, checkOut, adult, room);
-    resetWhere();
+    setSearchResult({ location, checkIn, checkOut, adult, room });
+
+    resetLocation();
     resetAdult();
     resetCheckIn();
     resetCheckOut();
     resetRoom();
     resetChildren();
+    history("/search");
   };
 
   return (
@@ -45,17 +58,17 @@ export default function Banner() {
             <input
               type="text"
               list="listid"
-              {...changeWhere}
+              {...changeLocation}
               placeholder="Where are you going?"
             />
             <datalist id="listid">
               <option label="Popular Destinations" value="&zwnj;" />{" "}
               {/* write a condition for this , incase someone sends this above empty value */}
-              <option value="Abuja " label="Nigeria" />
-              <option value="Lagos" label="Nigeria" />
-              <option value="Ikeja" label="Nigeria" />
-              <option value="Lekki" label="Nigeria" />
-              <option value="Ibadan" label="Nigeria" />
+              <option value="abuja " label="Nigeria" />
+              <option value="lagos" label="Nigeria" />
+              <option value="ikeja" label="Nigeria" />
+              <option value="lekki" label="Nigeria" />
+              <option value="ibadan" label="Nigeria" />
             </datalist>
           </div>
         </div>

@@ -1,9 +1,10 @@
 // import React from "react";
 
-export default function useSearch(item, data) {
+export default function useSearch(a, data) {
+  const result = data.filter((item) => {
+    console.log(item, a);
+  });
   return {
-    result: "ewr",
-    length: 45,
-    oat: item,
+    result,
   };
 }
