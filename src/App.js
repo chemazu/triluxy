@@ -11,7 +11,7 @@ import { SearchContext } from "./context/SearchContext";
 import { useState } from "react";
 
 function App() {
-  const [searchResult, setSearchResult] = useState({});
+  const [searchResult, setSearchResult] = useState({ location: "" });
   return (
     <div className="App">
       <Header />

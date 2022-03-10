@@ -1,10 +1,12 @@
-// import React from "react";
-
 export default function useSearch(a, data) {
   const result = data.filter((item) => {
-    console.log(item, a);
+    if (item.location == a.location) {
+      return true;
+    }
+    return false;
   });
   return {
     result,
+    length: result.length,
   };
 }

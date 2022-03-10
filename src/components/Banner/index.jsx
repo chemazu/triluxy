@@ -64,11 +64,11 @@ export default function Banner() {
             <datalist id="listid">
               <option label="Popular Destinations" value="&zwnj;" />{" "}
               {/* write a condition for this , incase someone sends this above empty value */}
-              <option value="abuja " label="Nigeria" />
-              <option value="lagos" label="Nigeria" />
-              <option value="ikeja" label="Nigeria" />
-              <option value="lekki" label="Nigeria" />
-              <option value="ibadan" label="Nigeria" />
+              <option value="Abuja" label="Nigeria" />
+              <option value="Lagos" label="Nigeria" />
+              <option value="Ikeja" label="Nigeria" />
+              <option value="Lekki" label="Nigeria" />
+              <option value="Ibadan" label="Nigeria" />
             </datalist>
           </div>
         </div>
