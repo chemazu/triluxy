@@ -5,15 +5,23 @@ import "./style.scss";
 import ImportContent from "../../resource";
 
 export default function Search() {
+  const filterOptions = [
+    "Top picks for your search",
+    "Stars (highest first)",
+    "Stars (lowest first)",
+    "Top reviewed",
+  ];
   const [show, setShow] = useState(false);
+  const [filterDetail, setFilterDetail] = useState(filterOptions[0]);
   const { sort, data } = ImportContent();
   const context = useContext(SearchContext);
   const { searchResult } = context;
   const { result, length } = useSearch(searchResult, data);
   const hideAction = (e) => {
     setShow(false);
-    console.log(e.target);
+    setFilterDetail(filterOptions[e.target.value]);
   };
+
   return (
     <div className="searchResults">
       <div className="desktop">
@@ -41,16 +49,22 @@ export default function Search() {
                 }}
               >
                 <img src={sort} alt="" />
-                <p>Top picks for your search</p>
+                <p>{filterDetail}</p>
               </div>
               {show && (
                 <div className="hidden-item">
-                  <p onClick={hideAction} value="rer">
+                  <option onClick={hideAction} value={0}>
                     Top picks for your search
-                  </p>
-                  <p onClick={hideAction}>Stars (highest first)</p>
-                  <p onClick={hideAction}>Stars (lowest first)</p>
-                  <p onClick={hideAction}>Top reviewed</p>
+                  </option>
+                  <option onClick={hideAction} value={1}>
+                    Stars (highest first)
+                  </option>
+                  <option onClick={hideAction} value={2}>
+                    Stars (lowest first)
+                  </option>
+                  <option onClick={hideAction} value={3}>
+                    Top reviewed
+                  </option>
                 </div>
               )}
             </div>
