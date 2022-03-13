@@ -3,6 +3,9 @@ import calendar from "./calendar.svg";
 import person from "./person.svg";
 import search from "./search.svg";
 import filter from "./filter.svg";
+import hotel1 from "./hotel1.jpg";
+import pin from "./pin.svg";
+
 
 
 
@@ -16,6 +19,8 @@ export default function ImportContent() {
     calendar,
     person,
     search,
-    filter
+    filter,
+    hotel1,
+    pin
   };
 }

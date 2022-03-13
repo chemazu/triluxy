@@ -8,6 +8,8 @@ import { SearchContext } from "../../context/SearchContext";
 import "./style.scss";
 import ImportContent from "../../resource";
 import Banner from "../../components/Banner";
+import SearchCard from "../../components/SearchCard";
+import Button from "../../components/Button";
 
 export default function Search() {
   const filterOptions = [
@@ -167,7 +169,7 @@ export default function Search() {
           </div>
         </div>
       </div>
-      {/* <div className="mobile">
+      <div className="mobile">
         <div className="search">
 
             <div className="place-search">
@@ -198,7 +200,6 @@ export default function Search() {
               <span>{searchResult.adult} adults</span></div>
 
         </div>
-
         <div className="mini-result">
           <div>
           <img src={sort} />
@@ -208,8 +209,17 @@ export default function Search() {
             <img src={filter} />
             <span>Filter</span></div>
             </div>
+            <div className="card-holder">
+            {result.map(item=><SearchCard item={item} key={item.id}/>)}
+            </div>
+            <div className="pag">
+              <div className="div">
+                <span>1 of 11</span>
+              </div>
+              <Button  style={{background:"#003580",color:"#fff"}}title="Next"/>
+            </div>
               
-      </div> */}
+      </div>
     </div>
   );
 }
