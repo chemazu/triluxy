@@ -56,7 +56,6 @@ export default function SearchCard(props) {
   const {title,review,location,rating} = props.item
   console.log(props.item)
   const {hotel1,pin }=ImportContent()
-
   return (
     <div className='search-card'>
       <div className="left"><img src={hotel1} alt="title"/></div>
