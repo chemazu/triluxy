@@ -2,8 +2,6 @@ import React, { useContext, useState } from "react";
 import useSearch from "../../hooks/search-hook";
 import { useInput } from "../../hooks/input-hook";
 import { useNavigate } from "react-router-dom";
-
-
 import { SearchContext } from "../../context/SearchContext";
 import "./style.scss";
 import ImportContent from "../../resource";
@@ -12,31 +10,40 @@ import SearchCard from "../../components/SearchCard";
 import Button from "../../components/Button";
 
 export default function Search() {
+  //dropdown options for the filter option
   const filterOptions = [
     "Top picks for your search",
     "Stars (highest first)",
     "Stars (lowest first)",
     "Top reviewed",
   ];
+  //controls visiblity of drop downs
   const [show, setShow] = useState(false);
+  
+  //displays the current filter option
   const [filterDetail, setFilterDetail] = useState(filterOptions[0]);
+  
   const { sort, data, person, calendar, search, filter } = ImportContent();
-  const context = useContext(SearchContext);
-  const { searchResult, setSearchResult } = context;
+  const context = useContext(SearchContext); 
+  
+  //search query
+  const { searchQuery, setSearchQuery } = context;
 
-  const { result, length } = useSearch(searchResult, data);
+  //search result
+  const { result, length } = useSearch(searchQuery, data);
+  //changes drop down visiblity
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
   };
+  //
+  //input element state and functions
   const {
     value: location,
     change: changeLocation,
     reset: resetLocation,
-  } = useInput(searchResult.location);
+  } = useInput(searchQuery.location);
   const history = useNavigate();
-
-
   const {
     value: checkIn,
     change: changeCheckIn,
@@ -55,27 +62,28 @@ export default function Search() {
   } = useInput("");
   const { value: room, change: changeRoom, reset: resetRoom } = useInput("");
 
+  //submits
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchResult({ location, checkIn, checkOut, adult, room });
-
+    setSearchQuery({ location, checkIn, checkOut, adult, room });
     resetLocation();
     resetAdult();
     resetCheckIn();
     resetCheckOut();
     resetRoom();
     resetChildren();
+    //pushes to search page
     history("/search");
   };
 
   return (
-    <div className="searchResults">
+    <div className="searchQuerys">
       <div className="desktop">
         <div className="left">
           <div className="one">
             <span>Home {"> "} </span>
             <span>
-              {searchResult.location} {"> "}
+              {searchQuery.location} {"> "}
             </span>
             <span>Search result : </span>
           </div>
@@ -119,14 +127,19 @@ export default function Search() {
             <input type="number" placeholder="rooms" {...changeRoom} />
           </div>
         </div>
+        <div style={{padding:"10px 0"}}className="small-button">
+        <Button style={{ background: "#003580", color: "#fff" , width:"90%"}} title="Find Hotel" onClick={handleSubmit} />
+
+        </div>
+
           </div>
           <div className="three"></div>
         </div>
         <div className="right">
           <div className="top">
-            <p>
-              {searchResult.location}: {length} properties found
-            </p>
+            <h2>
+              {searchQuery.location}: {length} properties found
+            </h2>
             <div>
               <div
                 className="sort-options"
@@ -154,9 +167,18 @@ export default function Search() {
                 </div>
               )}
             </div>
+            
           </div>
           <div className="card-holder">
           {result.map(item => <SearchCard item={item} key={item.id} />)}
+        </div>
+        <div className="pag">
+        <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
+
+          <div className="div">
+            <span>1 of 11</span>
+          </div>
+          <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
         </div>
         </div>
       </div>
@@ -187,8 +209,8 @@ export default function Search() {
 
           </div>
           <div className="mini-result"><img src={calendar} />
-            <span>{searchResult.checkIn} - {searchResult.checkOut}</span><img src={person} />
-            <span>{searchResult.adult} adults</span></div>
+            <span>{searchQuery.checkIn} - {searchQuery.checkOut}</span><img src={person} />
+            <span>{searchQuery.adult} adults</span></div>
 
         </div>
         <div className="mini-result">

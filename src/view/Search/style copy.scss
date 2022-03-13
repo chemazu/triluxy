@@ -1,4 +1,4 @@
-.searchResults {
+.searchQuerys {
   background: #eaf0f3;
   margin-top: 50px;
   padding: 10px;
@@ -60,7 +60,7 @@
 }
 
 @media screen and (max-width: 480px) {
-  .searchResults {
+  .searchQuerys {
     .result-content {
       grid-template-columns: 1fr;
       .filter {

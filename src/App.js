@@ -11,11 +11,11 @@ import { SearchContext } from "./context/SearchContext";
 import { useState } from "react";
 
 function App() {
-  const [searchResult, setSearchResult] = useState({ location: "" });
+  const [searchQuery, setSearchQuery] = useState({ location: "" });
   return (
     <div className="App">
       <Header />
-      <SearchContext.Provider value={{ searchResult, setSearchResult }}>
+      <SearchContext.Provider value={{ searchQuery, setSearchQuery }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />

@@ -6,7 +6,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -41,6 +41,18 @@
         "comments": "Mission Chinese Food has grown up from its scrappy Orchard Street days into a big, two story restaurant equipped with a pizza oven, a prime rib       cart,and a much broader menu. Yes, it still has all the hits — the kung pao pastrami, the thrice cooked bacon —but chef/proprietor Danny Bowien and executive chef Angela Dimayuga have also added a raw bar, two generous family-style set menus, and showstoppers like duck baked in clay. And you can still get a lot of food without breaking the bank."
       },
       {
+        "name": "Steve",
+        "date": "October 26, 2016",
+        "rating": 4,
+        "comments": "Mission Chinese Food has grown up from its scrappy Orchard Street days into a big, two story restaurant equipped with a pizza oven, a prime rib       cart,and a much broader menu. Yes, it still has all the hits — the kung pao pastrami, the thrice cooked bacon —but chef/proprietor Danny Bowien and executive chef Angela Dimayuga have also added a raw bar, two generous family-style set menus, and showstoppers like duck baked in clay. And you can still get a lot of food without breaking the bank."
+      },
+      {
+        "name": "Steve",
+        "date": "October 26, 2016",
+        "rating": 4,
+        "comments": "Mission Chinese Food has grown up from its scrappy Orchard Street days into a big, two story restaurant equipped with a pizza oven, a prime rib       cart,and a much broader menu. Yes, it still has all the hits — the kung pao pastrami, the thrice cooked bacon —but chef/proprietor Danny Bowien and executive chef Angela Dimayuga have also added a raw bar, two generous family-style set menus, and showstoppers like duck baked in clay. And you can still get a lot of food without breaking the bank."
+      },
+      {
         "name": "Morgan",
         "date": "October 26, 2016",
         "rating": 4,
@@ -52,7 +64,7 @@
         "rating": 3,
         "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
       }
-    ],"rating":[5,"good"],
+    ],"rating":[1,"Poor"],
     "terms": [
       "Check-in time 12 noon",
       "Check-out time 12 noon",
@@ -70,7 +82,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Abuja",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -109,12 +121,6 @@
         "date": "October 26, 2016",
         "rating": 4,
         "comments": "This place is a blast. Must orders: GREEN TEA NOODS, sounds gross (to me at least) but these were incredible!, Kung pao pastrami (but you already knew that), beef tartare was a fun appetizer that we decided to try, the spicy ma po tofu SUPER spicy but delicous, egg rolls and scallion pancake i could have passed on... I wish we would have gone with a larger group, so much more I would have liked to try!"
-      },
-      {
-        "name": "Jason",
-        "date": "October 26, 2016",
-        "rating": 3,
-        "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
       }
     ],"rating":[5,"good"],
     "terms": [
@@ -134,7 +140,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lekki",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -180,7 +186,14 @@
         "rating": 3,
         "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
       }
-    ],"rating":[5,"good"],
+      ,
+      {
+        "name": "Jason",
+        "date": "October 26, 2016",
+        "rating": 3,
+        "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
+      }
+    ],"rating":[3,"Fairly good"],
     "terms": [
       "Check-in time 12 noon",
       "Check-out time 12 noon",
@@ -198,7 +211,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -244,7 +257,14 @@
         "rating": 3,
         "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
       }
-    ],"rating":[5,"good"],
+      ,
+      {
+        "name": "Jason",
+        "date": "October 26, 2016",
+        "rating": 3,
+        "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
+      }
+    ],"rating":[2,"good"],
     "terms": [
       "Check-in time 12 noon",
       "Check-out time 12 noon",
@@ -262,7 +282,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -308,7 +328,7 @@
         "rating": 3,
         "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
       }
-    ],"rating":[5,"good"],
+    ],"rating":[3,"good"],
     "terms": [
       "Check-in time 12 noon",
       "Check-out time 12 noon",
@@ -326,7 +346,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Abuja",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -390,7 +410,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lekki",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -454,7 +474,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -493,14 +513,8 @@
         "date": "October 26, 2016",
         "rating": 4,
         "comments": "This place is a blast. Must orders: GREEN TEA NOODS, sounds gross (to me at least) but these were incredible!, Kung pao pastrami (but you already knew that), beef tartare was a fun appetizer that we decided to try, the spicy ma po tofu SUPER spicy but delicous, egg rolls and scallion pancake i could have passed on... I wish we would have gone with a larger group, so much more I would have liked to try!"
-      },
-      {
-        "name": "Jason",
-        "date": "October 26, 2016",
-        "rating": 3,
-        "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
       }
-    ],"rating":[5,"good"],
+    ],"rating":[4,"good"],
     "terms": [
       "Check-in time 12 noon",
       "Check-out time 12 noon",
@@ -518,7 +532,7 @@
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
     "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
-    "description": "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar. Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests.",
+    "description": ["Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.", "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."],
     "roomType": [
       {
         "slug": "doubleRoom",
@@ -551,18 +565,6 @@
         "date": "October 26, 2016",
         "rating": 4,
         "comments": "Mission Chinese Food has grown up from its scrappy Orchard Street days into a big, two story restaurant equipped with a pizza oven, a prime rib       cart,and a much broader menu. Yes, it still has all the hits — the kung pao pastrami, the thrice cooked bacon —but chef/proprietor Danny Bowien and executive chef Angela Dimayuga have also added a raw bar, two generous family-style set menus, and showstoppers like duck baked in clay. And you can still get a lot of food without breaking the bank."
-      },
-      {
-        "name": "Morgan",
-        "date": "October 26, 2016",
-        "rating": 4,
-        "comments": "This place is a blast. Must orders: GREEN TEA NOODS, sounds gross (to me at least) but these were incredible!, Kung pao pastrami (but you already knew that), beef tartare was a fun appetizer that we decided to try, the spicy ma po tofu SUPER spicy but delicous, egg rolls and scallion pancake i could have passed on... I wish we would have gone with a larger group, so much more I would have liked to try!"
-      },
-      {
-        "name": "Jason",
-        "date": "October 26, 2016",
-        "rating": 3,
-        "comments": "I was VERY excited to come here after seeing and hearing so many good things about this place. Having read much, I knew going into it that it was not going to be authentic Chinese. The place was edgy, had a punk rock throwback attitude, and generally delivered the desired atmosphere. Things went downhill from there though. The food was okay at best and the best qualities were easily overshadowed by what I believe to be poor decisions by the kitchen staff."
       }
     ],"rating":[5,"good"],
     "terms": [

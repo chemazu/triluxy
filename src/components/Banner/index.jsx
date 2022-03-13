@@ -10,7 +10,7 @@ export default function Banner() {
   const history = useNavigate();
 
   const context = useContext(SearchContext);
-  const { searchResult, setSearchResult } = context;
+  const { searchQuery, setSearchQuery } = context;
   const {
     value: location,
     change: changeLocation,
@@ -36,7 +36,7 @@ export default function Banner() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchResult({ location, checkIn, checkOut, adult, room });
+    setSearchQuery({ location, checkIn, checkOut, adult, room });
 
     resetLocation();
     resetAdult();

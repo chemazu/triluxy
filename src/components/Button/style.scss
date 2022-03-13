@@ -2,4 +2,9 @@ button{
     // height: 36px;
     min-width: 90px;
     padding: 10px;
+    outline: none;
+    border :0px;
+    &:hover{
+        cursor: pointer;
+    }
 }

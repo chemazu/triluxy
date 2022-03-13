@@ -7,15 +7,15 @@ import useSearch from "../../hooks/search-hook";
 import data from "../../resource/hotel.json";
 export default function Search() {
   const context = useContext(SearchContext);
-  const { searchResult, setSearchResult } = context;
-  console.log(searchResult, "fe");
-  const { result, length } = useSearch(searchResult, data);
+  const { searchQuery, setSearchQuery } = context;
+  console.log(searchQuery, "fe");
+  const { result, length } = useSearch(searchQuery, data);
   console.log(result, length);
 
   return (
-    <div className="searchResults">
+    <div className="searchQuerys">
       <div className="result-bar">
-        <h4>Hotels in {searchResult.location}</h4>
+        <h4>Hotels in {searchQuery.location}</h4>
       </div>
       <div className="result-content">
         <div className="filter">
