@@ -41,7 +41,7 @@
 //     }
 // }
 .search-card{
-    padding: 10px 5%;
+    padding: 10px 5px;
     display: flex;
     background: #fff;
     margin-bottom: 7.5px;
@@ -54,8 +54,8 @@
             height: 100px;
         }
     }
-    .right{
-        padding: 5px 5%;
+    .right-card{
+        padding: 5px 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -69,6 +69,8 @@
         div{
             display: flex;
             align-items: center;
+        width: 70%;
+
         }
         img{
             width: 1rem;

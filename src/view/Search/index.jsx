@@ -20,9 +20,9 @@ export default function Search() {
   ];
   const [show, setShow] = useState(false);
   const [filterDetail, setFilterDetail] = useState(filterOptions[0]);
-  const { sort, data, person, calendar,search,filter } = ImportContent();
+  const { sort, data, person, calendar, search, filter } = ImportContent();
   const context = useContext(SearchContext);
-  const { searchResult ,setSearchResult} = context;
+  const { searchResult, setSearchResult } = context;
 
   const { result, length } = useSearch(searchResult, data);
   const hideAction = (e) => {
@@ -80,29 +80,19 @@ export default function Search() {
             <span>Search result : </span>
           </div>
           <div className="two">
-          <form>
-        <div className="place-search">
-          <div className="search-item">
-            <label>Where are you going ? </label>
+            <h3>Search</h3>
+            <div className="place-search">
+            <div className="search-item">
+            <label>Destination </label>
             <input
               type="text"
               list="listid"
               {...changeLocation}
               placeholder="Where are you going?"
             />
-            <datalist id="listid">
-              <option label="Popular Destinations" value="&zwnj;" />{" "}
-              {/* write a condition for this , incase someone sends this above empty value */}
-              <option value="Abuja" label="Nigeria" />
-              <option value="Lagos" label="Nigeria" />
-              <option value="Ikeja" label="Nigeria" />
-              <option value="Lekki" label="Nigeria" />
-              <option value="Ibadan" label="Nigeria" />
-            </datalist>
-          </div>
-        </div>
-
-        <div className="date-search">
+            </div>
+            </div>
+            <div className="date-search">
           <div className="search-item">
             <label>Check-in </label>
             <input type="date" {...changeCheckIn} />
@@ -112,7 +102,6 @@ export default function Search() {
             <input type="date" {...changeCheckOut} />
           </div>
         </div>
-
         <div className="info-search">
           <div className="search-item">
             <label>adults </label>
@@ -120,9 +109,9 @@ export default function Search() {
           </div>
 
           <div className="search-item">
-            <label>children</label>
+            <label>kids</label>
 
-            <input type="number" placeholder="children" {...changeChildren} />
+            <input type="number" placeholder="kids" {...changeChildren} />
           </div>
           <div className="search-item">
             <label>rooms </label>
@@ -130,7 +119,6 @@ export default function Search() {
             <input type="number" placeholder="rooms" {...changeRoom} />
           </div>
         </div>
-      </form>
           </div>
           <div className="three"></div>
         </div>
@@ -167,58 +155,63 @@ export default function Search() {
               )}
             </div>
           </div>
+          <div className="card-holder">
+          {result.map(item => <SearchCard item={item} key={item.id} />)}
+        </div>
         </div>
       </div>
       <div className="mobile">
         <div className="search">
 
-            <div className="place-search">
-              <div className="search-item">
-                <img src={search} alt="" />
-                <input
-                  type="text"
-                  list="listid"
-                  {...changeLocation}
-                  placeholder="Where are you going?"
-                />
-                <datalist id="listid">
-                  <option label="Popular Destinations" value="&zwnj;" />{" "}
-                  <option value="Abuja" label="Nigeria" />
-                  <option value="Lagos" label="Nigeria" />
-                  <option value="Ikeja" label="Nigeria" />
-                  <option value="Lekki" label="Nigeria" />
-                  <option value="Ibadan" label="Nigeria" />
-                </datalist>
-
-
-              </div>
+          <div className="place-search">
+            <div className="search-item">
+              <img src={search} alt="" />
+              <input
+                type="text"
+                list="listid"
+                {...changeLocation}
+                placeholder="Where are you going?"
+              />
+              <datalist id="listid">
+                <option label="Popular Destinations" value="&zwnj;" />{" "}
+                <option value="Abuja" label="Nigeria" />
+                <option value="Lagos" label="Nigeria" />
+                <option value="Ikeja" label="Nigeria" />
+                <option value="Lekki" label="Nigeria" />
+                <option value="Ibadan" label="Nigeria" />
+              </datalist>
 
 
             </div>
-            <div className="mini-result"><img src={calendar} />
-              <span>{searchResult.checkIn} - {searchResult.checkOut}</span><img src={person} />
-              <span>{searchResult.adult} adults</span></div>
+
+
+          </div>
+          <div className="mini-result"><img src={calendar} />
+            <span>{searchResult.checkIn} - {searchResult.checkOut}</span><img src={person} />
+            <span>{searchResult.adult} adults</span></div>
 
         </div>
         <div className="mini-result">
           <div>
-          <img src={sort} />
-              <span>Sort</span>
-            </div>
-            <div>
+            <img src={sort} />
+            <span>Sort</span>
+          </div>
+          <div>
             <img src={filter} />
             <span>Filter</span></div>
-            </div>
-            <div className="card-holder">
-            {result.map(item=><SearchCard item={item} key={item.id}/>)}
-            </div>
-            <div className="pag">
-              <div className="div">
-                <span>1 of 11</span>
-              </div>
-              <Button  style={{background:"#003580",color:"#fff"}}title="Next"/>
-            </div>
-              
+        </div>
+        <div className="card-holder">
+          {result.map(item => <SearchCard item={item} key={item.id} />)}
+        </div>
+        <div className="pag">
+        <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
+
+          <div className="div">
+            <span>1 of 11</span>
+          </div>
+          <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
+        </div>
+
       </div>
     </div>
   );

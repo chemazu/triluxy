@@ -60,7 +60,7 @@ export default function SearchCard(props) {
   return (
     <div className='search-card'>
       <div className="left"><img src={hotel1} alt="title"/></div>
-      <div className="right">
+      <div className="right-card">
         <h4>{title}</h4>
         <div style={{justifyContent:"space-between"}}><span className='rating'>{rating[0]}</span> <span style={{color:"green"}} >{rating[1]}</span><span>{review.length} </span><span style={{color:"#febb02"}} > reviews</span></div>
         <div><img src={pin}/>
