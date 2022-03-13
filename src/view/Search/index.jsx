@@ -8,6 +8,7 @@ import ImportContent from "../../resource";
 import Banner from "../../components/Banner";
 import SearchCard from "../../components/SearchCard";
 import Button from "../../components/Button";
+import { useEffect } from "react/cjs/react.production.min";
 
 export default function Search() {
   //dropdown options for the filter option
@@ -22,6 +23,7 @@ export default function Search() {
   
   //displays the current filter option
   const [filterDetail, setFilterDetail] = useState(filterOptions[0]);
+
   
   const { sort, data, person, calendar, search, filter } = ImportContent();
   const context = useContext(SearchContext); 
@@ -31,12 +33,34 @@ export default function Search() {
 
   //search result
   const { result, length } = useSearch(searchQuery, data);
+  const [displayResult,setDisplayResult]=useState(result)
+
+  const fish =result.sort((a,b)=>{
+    return b.rating[0]-a.rating[0]
+  }
+  )
+  
+  const reverse =result.sort((a,b)=>{
+    return a.rating[0]-b.rating[0]
+  }
+  )
+  
+  const review =result.sort((a,b)=>{
+    return b.review.length-a.review.length
+  }
+  
+  )
+  console.log(review,result,reverse)
+
+  const food =[result,fish,reverse,review]
+
   //changes drop down visiblity
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
+    setDisplayResult(review)
   };
-  //
+  
   //input element state and functions
   const {
     value: location,
@@ -61,6 +85,31 @@ export default function Search() {
     reset: resetChildren,
   } = useInput("");
   const { value: room, change: changeRoom, reset: resetRoom } = useInput("");
+
+
+
+    //result options
+
+
+  //displays the current result option
+
+  // const [displayResult, setDisplayResult]= useState(resultOptions[0])
+
+//sort function
+
+
+
+
+
+// const sortedResult =(c)=> {result.sort((a,b)=>{
+//   if (c==1){
+//   return b.rating[0]-a.rating[0]
+//   }
+//   else 
+//   return a.rating[0]-b.rating[0]
+// }
+// )}
+
 
   //submits
   const handleSubmit = (e) => {

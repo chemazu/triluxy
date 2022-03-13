@@ -8,7 +8,6 @@ export default function Subscribe() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(sub, );
     resetSub()
   }
 

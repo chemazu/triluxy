@@ -7,7 +7,6 @@ import "./style.scss";
 
 export default function SearchCard(props) {
   const {title,review,location,rating,description} = props.item
-  console.log(props.item)
   const {hotel1,pin }=ImportContent()
   return (
     <div className="search-card">
