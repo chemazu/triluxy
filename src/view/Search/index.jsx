@@ -20,47 +20,41 @@ export default function Search() {
   ];
   //controls visiblity of drop downs
   const [show, setShow] = useState(false);
-  
+
   //displays the current filter option
   const [filterDetail, setFilterDetail] = useState(filterOptions[0]);
 
-  
   const { sort, data, person, calendar, search, filter } = ImportContent();
-  const context = useContext(SearchContext); 
-  
+  const context = useContext(SearchContext);
+
   //search query
   const { searchQuery, setSearchQuery } = context;
 
   //search result
   const { result, length } = useSearch(searchQuery, data);
-  const [displayResult,setDisplayResult]=useState(result)
+  const [displayResult, setDisplayResult] = useState(result);
 
-  const fish =result.sort((a,b)=>{
-    return b.rating[0]-a.rating[0]
-  }
-  )
-  
-  const reverse =result.sort((a,b)=>{
-    return a.rating[0]-b.rating[0]
-  }
-  )
-  
-  const review =result.sort((a,b)=>{
-    return b.review.length-a.review.length
-  }
-  
-  )
-  console.log(review,result,reverse)
+  // const fish = result.sort((a, b) => {
+  //   return b.rating[0] - a.rating[0];
+  // });
 
-  const food =[result,fish,reverse,review]
+  // const reverse = result.sort((a, b) => {
+  //   return a.rating[0] - b.rating[0];
+  // });
+
+  // const review = result.sort((a, b) => {
+  //   return b.review.length - a.review.length;
+  // });
+  console.log(result);
+
+  // const food = [result, fish, reverse, review];
 
   //changes drop down visiblity
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
-    setDisplayResult(review)
   };
-  
+
   //input element state and functions
   const {
     value: location,
@@ -86,30 +80,22 @@ export default function Search() {
   } = useInput("");
   const { value: room, change: changeRoom, reset: resetRoom } = useInput("");
 
-
-
-    //result options
-
+  //result options
 
   //displays the current result option
 
   // const [displayResult, setDisplayResult]= useState(resultOptions[0])
 
-//sort function
+  //sort function
 
-
-
-
-
-// const sortedResult =(c)=> {result.sort((a,b)=>{
-//   if (c==1){
-//   return b.rating[0]-a.rating[0]
-//   }
-//   else 
-//   return a.rating[0]-b.rating[0]
-// }
-// )}
-
+  // const sortedResult =(c)=> {result.sort((a,b)=>{
+  //   if (c==1){
+  //   return b.rating[0]-a.rating[0]
+  //   }
+  //   else
+  //   return a.rating[0]-b.rating[0]
+  // }
+  // )}
 
   //submits
   const handleSubmit = (e) => {
@@ -139,48 +125,50 @@ export default function Search() {
           <div className="two">
             <h3>Search</h3>
             <div className="place-search">
-            <div className="search-item">
-            <label>Destination </label>
-            <input
-              type="text"
-              list="listid"
-              {...changeLocation}
-              placeholder="Where are you going?"
-            />
-            </div>
+              <div className="search-item">
+                <label>Destination </label>
+                <input
+                  type="text"
+                  list="listid"
+                  {...changeLocation}
+                  placeholder="Where are you going?"
+                />
+              </div>
             </div>
             <div className="date-search">
-          <div className="search-item">
-            <label>Check-in </label>
-            <input type="date" {...changeCheckIn} />
-          </div>
-          <div className="search-item">
-            <label>Check-out </label>
-            <input type="date" {...changeCheckOut} />
-          </div>
-        </div>
-        <div className="info-search">
-          <div className="search-item">
-            <label>adults </label>
-            <input type="number" placeholder="adults" {...changeAdult} />
-          </div>
+              <div className="search-item">
+                <label>Check-in </label>
+                <input type="date" {...changeCheckIn} />
+              </div>
+              <div className="search-item">
+                <label>Check-out </label>
+                <input type="date" {...changeCheckOut} />
+              </div>
+            </div>
+            <div className="info-search">
+              <div className="search-item">
+                <label>adults </label>
+                <input type="number" placeholder="adults" {...changeAdult} />
+              </div>
 
-          <div className="search-item">
-            <label>kids</label>
+              <div className="search-item">
+                <label>kids</label>
 
-            <input type="number" placeholder="kids" {...changeChildren} />
-          </div>
-          <div className="search-item">
-            <label>rooms </label>
+                <input type="number" placeholder="kids" {...changeChildren} />
+              </div>
+              <div className="search-item">
+                <label>rooms </label>
 
-            <input type="number" placeholder="rooms" {...changeRoom} />
-          </div>
-        </div>
-        <div style={{padding:"10px 0"}}className="small-button">
-        <Button style={{ background: "#003580", color: "#fff" , width:"90%"}} title="Find Hotel" onClick={handleSubmit} />
-
-        </div>
-
+                <input type="number" placeholder="rooms" {...changeRoom} />
+              </div>
+            </div>
+            <div style={{ padding: "10px 0" }} className="small-button">
+              <Button
+                style={{ background: "#003580", color: "#fff", width: "90%" }}
+                title="Find Hotel"
+                onClick={handleSubmit}
+              />
+            </div>
           </div>
           <div className="three"></div>
         </div>
@@ -216,24 +204,30 @@ export default function Search() {
                 </div>
               )}
             </div>
-            
           </div>
           <div className="card-holder">
-          {result.map(item => <SearchCard item={item} key={item.id} />)}
-        </div>
-        <div className="pag">
-        <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
-
-          <div className="div">
-            <span>1 of 11</span>
+            {result.map((item) => (
+              <SearchCard item={item} key={item.id} />
+            ))}
           </div>
-          <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
-        </div>
+          <div className="pag">
+            <Button
+              style={{ background: "#003580", color: "#fff" }}
+              title="Next"
+            />
+
+            <div className="div">
+              <span>1 of 11</span>
+            </div>
+            <Button
+              style={{ background: "#003580", color: "#fff" }}
+              title="Next"
+            />
+          </div>
         </div>
       </div>
       <div className="mobile">
         <div className="search">
-
           <div className="place-search">
             <div className="search-item">
               <img src={search} alt="" />
@@ -251,16 +245,16 @@ export default function Search() {
                 <option value="Lekki" label="Nigeria" />
                 <option value="Ibadan" label="Nigeria" />
               </datalist>
-
-
             </div>
-
-
           </div>
-          <div className="mini-result"><img src={calendar} />
-            <span>{searchQuery.checkIn} - {searchQuery.checkOut}</span><img src={person} />
-            <span>{searchQuery.adult} adults</span></div>
-
+          <div className="mini-result">
+            <img src={calendar} />
+            <span>
+              {searchQuery.checkIn} - {searchQuery.checkOut}
+            </span>
+            <img src={person} />
+            <span>{searchQuery.adult} adults</span>
+          </div>
         </div>
         <div className="mini-result">
           <div>
@@ -269,20 +263,28 @@ export default function Search() {
           </div>
           <div>
             <img src={filter} />
-            <span>Filter</span></div>
+            <span>Filter</span>
+          </div>
         </div>
         <div className="card-holder">
-          {result.map(item => <SearchCard item={item} key={item.id} />)}
+          {result.map((item) => (
+            <SearchCard item={item} key={item.id} />
+          ))}
         </div>
         <div className="pag">
-        <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
+          <Button
+            style={{ background: "#003580", color: "#fff" }}
+            title="Next"
+          />
 
           <div className="div">
             <span>1 of 11</span>
           </div>
-          <Button style={{ background: "#003580", color: "#fff" }} title="Next" />
+          <Button
+            style={{ background: "#003580", color: "#fff" }}
+            title="Next"
+          />
         </div>
-
       </div>
     </div>
   );
