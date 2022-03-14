@@ -32,7 +32,7 @@ export default function Search() {
 
   //search result
   const { result, length } = useSearch(searchQuery, data);
-  const [displayResult, setDisplayResult] = useState(result);
+  const [displayResult, setDisplayResult] = useState("");
 
   // const fish = result.sort((a, b) => {
   //   return b.rating[0] - a.rating[0];
@@ -46,20 +46,23 @@ export default function Search() {
   //   return b.review.length - a.review.length;
   // });
   const func = (key) => {
-    return;
-    result.sort((a, b) => {
+    return result.sort((a, b) => {
       switch (key) {
-        case "cow":
-          return b.review.length - a.review.length;
-          break;
-        case "fish":
+        case 0:
           return b.rating[0] - a.rating[0];
+          //return based ob highest rated
           break;
         case 1:
+          return b.rating[0] - a.rating[0];
+          break;
+        case 2:
+          return b.rating[0] - a.rating[0];
+          break;
+        case 3:
           return b.review.length - a.review.length;
           break;
         default:
-          return a.rating[0] - b.rating[0];
+          return true;
           break;
       }
     });
@@ -71,7 +74,10 @@ export default function Search() {
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
-    func(e.target.value);
+    setDisplayResult(e.target.value);
+    console.log(e.target.value, "eewe");
+    console.log(displayResult, "nonn");
+    console.log(func(displayResult), "ewe");
   };
   console.log(result);
   //input element state and functions
@@ -222,7 +228,7 @@ export default function Search() {
             </div>
           </div>
           <div className="card-holder">
-            {result.map((item) => (
+            {func(3).map((item) => (
               <SearchCard item={item} key={item.id} />
             ))}
           </div>
@@ -283,7 +289,7 @@ export default function Search() {
           </div>
         </div>
         <div className="card-holder">
-          {result.map((item) => (
+          {func(displayResult).map((item) => (
             <SearchCard item={item} key={item.id} />
           ))}
         </div>
