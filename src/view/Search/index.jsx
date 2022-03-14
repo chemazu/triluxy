@@ -32,6 +32,8 @@ export default function Search() {
 
   //search result
   const { result, length } = useSearch(searchQuery, data);
+  const [fata ,setFata]=useState(result)
+const [order, setOrder] = useState("")
   const [displayResult, setDisplayResult] = useState("");
 
   // const fish = result.sort((a, b) => {
@@ -56,7 +58,7 @@ export default function Search() {
           return b.rating[0] - a.rating[0];
           break;
         case 2:
-          return b.rating[0] - a.rating[0];
+          return a.rating[0] - b.rating[0];
           break;
         case 3:
           return b.review.length - a.review.length;
@@ -68,17 +70,46 @@ export default function Search() {
     });
   };
 
+  const superSort =()=>{
+    console.log(order,2)
+    if (order== 0){
+      const sorted =[...fata]
+      setFata(sorted)
+      setOrder(0)
+    }
+    if(order === 1){
+      const sorted =[...fata].sort((a,b)=>{
+        //  return b.rating[0] - a.rating[0];
+        return b.review.length - a.review.length;
+      })
+      setFata(sorted)
+    setOrder("1")
+    }
+    if(order==2){
+      const sorted =[...fata].sort((a,b)=>{
+        return b.review.length - a.review.length;
+      })
+      setFata(sorted)
+    setOrder(2)
+    }
+
+  }
+
   // const food = [result, fish, reverse, review];
 
   //changes drop down visiblity
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
-    setDisplayResult(e.target.value);
-    console.log(e.target.value, "eewe");
-    console.log(displayResult, "nonn");
-    console.log(func(displayResult), "ewe");
+  console.log(e.target.value,1)
+    setOrder(e.target.value)
+    superSort()
+    console.log(order)
+    console.log(fata)
+   
   };
+  const oip =[func(0),func(1),func(2)]
+  console.log(oip)
   console.log(result);
   //input element state and functions
   const {
@@ -210,6 +241,20 @@ export default function Search() {
                 <p>{filterDetail}</p>
               </div>
               {show && (
+                // <div className="hidden-item">
+                //   <option onClick={hideAction} value={0}>
+                //     Top picks for your search
+                //   </option>
+                //   <option onClick={hideAction} value={1} mal="fish">
+                //     Stars (highest first)
+                //   </option>
+                //   <option onClick={hideAction} value={2} mal="cow">
+                //     Stars (lowest first)
+                //   </option>
+                //   <option onClick={hideAction} value={3} mal="fish">
+                //     Top reviewed
+                //   </option>
+                // </div>
                 <div className="hidden-item">
                   <option onClick={hideAction} value={0}>
                     Top picks for your search
@@ -217,18 +262,18 @@ export default function Search() {
                   <option onClick={hideAction} value={1} mal="fish">
                     Stars (highest first)
                   </option>
-                  <option onClick={hideAction} value={2} mal="cow">
+                  {/* <option onClick={superSort(2)} value={2} mal="cow">
                     Stars (lowest first)
                   </option>
-                  <option onClick={hideAction} value={3} mal="fish">
+                  <option onClick={superSort(3)} value={3} mal="fish">
                     Top reviewed
-                  </option>
+                  </option> */}
                 </div>
               )}
             </div>
           </div>
           <div className="card-holder">
-            {func(3).map((item) => (
+            {result.map((item) => (
               <SearchCard item={item} key={item.id} />
             ))}
           </div>
