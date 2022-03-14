@@ -45,7 +45,23 @@ export default function Search() {
   // const review = result.sort((a, b) => {
   //   return b.review.length - a.review.length;
   // });
-  console.log(result);
+  const func = (key) => {
+    result.sort((a, b) => {
+      switch (key) {
+        case "cow":
+          return b.review.length - a.review.length;
+          break;
+        case "fish":
+          return b.rating[0] - a.rating[0];
+          break;
+        default:
+          return a.rating[0] - b.rating[0];
+          break;
+      }
+    });
+  };
+
+  console.log(func("fish"));
 
   // const food = [result, fish, reverse, review];
 
