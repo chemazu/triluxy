@@ -46,6 +46,7 @@ export default function Search() {
   //   return b.review.length - a.review.length;
   // });
   const func = (key) => {
+    return;
     result.sort((a, b) => {
       switch (key) {
         case "cow":
@@ -54,6 +55,9 @@ export default function Search() {
         case "fish":
           return b.rating[0] - a.rating[0];
           break;
+        case 1:
+          return b.review.length - a.review.length;
+          break;
         default:
           return a.rating[0] - b.rating[0];
           break;
@@ -61,16 +65,15 @@ export default function Search() {
     });
   };
 
-  console.log(func("fish"));
-
   // const food = [result, fish, reverse, review];
 
   //changes drop down visiblity
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
+    func(e.target.value);
   };
-
+  console.log(result);
   //input element state and functions
   const {
     value: location,
@@ -166,15 +169,12 @@ export default function Search() {
                 <label>adults </label>
                 <input type="number" placeholder="adults" {...changeAdult} />
               </div>
-
               <div className="search-item">
                 <label>kids</label>
-
                 <input type="number" placeholder="kids" {...changeChildren} />
               </div>
               <div className="search-item">
                 <label>rooms </label>
-
                 <input type="number" placeholder="rooms" {...changeRoom} />
               </div>
             </div>
@@ -208,13 +208,13 @@ export default function Search() {
                   <option onClick={hideAction} value={0}>
                     Top picks for your search
                   </option>
-                  <option onClick={hideAction} value={1}>
+                  <option onClick={hideAction} value={1} mal="fish">
                     Stars (highest first)
                   </option>
-                  <option onClick={hideAction} value={2}>
+                  <option onClick={hideAction} value={2} mal="cow">
                     Stars (lowest first)
                   </option>
-                  <option onClick={hideAction} value={3}>
+                  <option onClick={hideAction} value={3} mal="fish">
                     Top reviewed
                   </option>
                 </div>
