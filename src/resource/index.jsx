@@ -5,6 +5,8 @@ import search from "./search.svg";
 import filter from "./filter.svg";
 import hotel1 from "./hotel1.jpg";
 import pin from "./pin.svg";
+import caretright from "./caretright.svg";
+
 
 
 
@@ -21,6 +23,7 @@ export default function ImportContent() {
     search,
     filter,
     hotel1,
-    pin
+    pin,
+    caretright
   };
 }

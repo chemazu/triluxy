@@ -5,12 +5,15 @@ import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import "./style.scss";
 import ImportContent from "../../resource";
-import Banner from "../../components/Banner";
 import SearchCard from "../../components/SearchCard";
 import Button from "../../components/Button";
-import { useEffect } from "react/cjs/react.production.min";
+import CardWrapper from "../CardWrapper";
 
 export default function Search() {
+
+  //import miscellanous items
+  const { sort, data, person, calendar, search, filter } = ImportContent();
+
   //dropdown options for the filter option
   const filterOptions = [
     "Top picks for your search",
@@ -18,13 +21,13 @@ export default function Search() {
     "Stars (lowest first)",
     "Top reviewed",
   ];
+
   //controls visiblity of drop downs
   const [show, setShow] = useState(false);
 
   //displays the current filter option
   const [filterDetail, setFilterDetail] = useState(filterOptions[0]);
 
-  const { sort, data, person, calendar, search, filter } = ImportContent();
   const context = useContext(SearchContext);
 
   //search query
@@ -32,92 +35,83 @@ export default function Search() {
 
   //search result
   const { result, length } = useSearch(searchQuery, data);
-  const [fata ,setFata]=useState(result)
-const [order, setOrder] = useState("")
-  const [displayResult, setDisplayResult] = useState("");
 
-  // const fish = result.sort((a, b) => {
-  //   return b.rating[0] - a.rating[0];
-  // });
+  //controls the sorting order
+  const [displayResult, setDisplayResult] = useState(result)
+  const [order, setOrder] = useState(0)
 
-  // const reverse = result.sort((a, b) => {
-  //   return a.rating[0] - b.rating[0];
-  // });
+  //superSort this controls how the returned result is sorted
+  // const superSort = () => {
+  //   if (order === 0) {
+  //     console.log("Top picks for your search")
+  //     const sorted =[...displayResult].sort((a,b)=>{
+  //        return b.rating[0] - a.rating[0];
+  //     })
+  //     setDisplayResult(sorted)
+  //     setOrder("0")
+  //     history("/search")
 
-  // const review = result.sort((a, b) => {
-  //   return b.review.length - a.review.length;
-  // });
-  const func = (key) => {
-    return result.sort((a, b) => {
-      switch (key) {
-        case 0:
-          return b.rating[0] - a.rating[0];
-          //return based ob highest rated
-          break;
-        case 1:
-          return b.rating[0] - a.rating[0];
-          break;
-        case 2:
-          return a.rating[0] - b.rating[0];
-          break;
-        case 3:
-          return b.review.length - a.review.length;
-          break;
-        default:
-          return true;
-          break;
-      }
-    });
-  };
+  //   }
+  //   if (order === 1) {
+  //     const sorted =[...displayResult].sort((a,b)=>{
+  //        return b.rating[0] - a.rating[0];
+  //       // return b.review.length - a.review.length;
+  //     })
+  //     setDisplayResult(sorted)
+  //     setOrder(1)
 
-  const superSort =()=>{
-    console.log(order,2)
-    if (order== 0){
-      const sorted =[...fata]
-      setFata(sorted)
-      setOrder(0)
-    }
-    if(order === 1){
-      const sorted =[...fata].sort((a,b)=>{
-        //  return b.rating[0] - a.rating[0];
-        return b.review.length - a.review.length;
-      })
-      setFata(sorted)
-    setOrder("1")
-    }
-    if(order==2){
-      const sorted =[...fata].sort((a,b)=>{
-        return b.review.length - a.review.length;
-      })
-      setFata(sorted)
-    setOrder(2)
-    }
+  //     console.log("Stars (highest first)")
+  //     history("/search")
 
+
+  //   }
+  //   if (order === 2) {
+  //     const sorted =[...displayResult.sort((a,b)=>{
+  //       return a.rating[0] - b.rating[0];
+  //    })
+  //    setDisplayResult(sorted)
+  //    setOrder(2)
+
+  //     console.log("Stars (lowest first)")
+  //     history("/search")
+
+  //   }
+
+  //   if (order === 3) {
+  //     const sorted =displayResult.sort((a,b)=>{
+  //      return b.rating[0] - a.rating[0];
+
+  //    })
+  //    setDisplayResult(sorted)
+  //    setOrder(3)
+  //    history("/search")
+
+
+  //     console.log("Top reviewed",)
+  //   }
+
+
+  // }
+
+  const roids = (a, b) => {
+    if (order === 0) { return a.review.length - b.review.length; }
+    else { return a.rating[0] - b.rating[0] };
   }
-
-  // const food = [result, fish, reverse, review];
 
   //changes drop down visiblity
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
-  console.log(e.target.value,1)
-    setOrder(e.target.value)
-    superSort()
-    console.log(order)
-    console.log(fata)
-   
+    setOrder(Number(e.target.value))
+
+
   };
-  const oip =[func(0),func(1),func(2)]
-  console.log(oip)
-  console.log(result);
   //input element state and functions
   const {
     value: location,
     change: changeLocation,
     reset: resetLocation,
   } = useInput(searchQuery.location);
-  const history = useNavigate();
   const {
     value: checkIn,
     change: changeCheckIn,
@@ -136,35 +130,19 @@ const [order, setOrder] = useState("")
   } = useInput("");
   const { value: room, change: changeRoom, reset: resetRoom } = useInput("");
 
-  //result options
 
-  //displays the current result option
-
-  // const [displayResult, setDisplayResult]= useState(resultOptions[0])
-
-  //sort function
-
-  // const sortedResult =(c)=> {result.sort((a,b)=>{
-  //   if (c==1){
-  //   return b.rating[0]-a.rating[0]
-  //   }
-  //   else
-  //   return a.rating[0]-b.rating[0]
-  // }
-  // )}
-
-  //submits
-  const handleSubmit = (e) => {
+  const HandleSubmit = (e) => {
     e.preventDefault();
     setSearchQuery({ location, checkIn, checkOut, adult, room });
+
+
     resetLocation();
     resetAdult();
     resetCheckIn();
     resetCheckOut();
     resetRoom();
     resetChildren();
-    //pushes to search page
-    history("/search");
+
   };
 
   return (
@@ -189,39 +167,47 @@ const [order, setOrder] = useState("")
                   {...changeLocation}
                   placeholder="Where are you going?"
                 />
+
+                {/* <input value={location} onChange={handleChange}></input> */}
               </div>
             </div>
-            <div className="date-search">
-              <div className="search-item">
-                <label>Check-in </label>
-                <input type="date" {...changeCheckIn} />
+            <form onSubmit={HandleSubmit}>
+
+              <div className="date-search">
+                <div className="search-item">
+                  <label>Check-in </label>
+                  <input type="date" {...changeCheckIn} />
+                </div>
+                <div className="search-item">
+                  <label>Check-out </label>
+                  <input type="date" {...changeCheckOut} />
+                </div>
               </div>
-              <div className="search-item">
-                <label>Check-out </label>
-                <input type="date" {...changeCheckOut} />
+              <div className="info-search">
+                <div className="search-item">
+                  <label>adults </label>
+                  <input type="number" placeholder="adults" {...changeAdult} />
+                </div>
+                <div className="search-item">
+                  <label>kids</label>
+                  <input type="number" placeholder="kids" {...changeChildren} />
+                </div>
+                <div className="search-item">
+                  <label>rooms </label>
+                  <input type="number" placeholder="rooms" {...changeRoom} />
+                </div>
               </div>
-            </div>
-            <div className="info-search">
-              <div className="search-item">
-                <label>adults </label>
-                <input type="number" placeholder="adults" {...changeAdult} />
+              <div style={{ padding: "10px 0" }} className="small-button">
+                <Button
+                  style={{ background: "#003580", color: "#fff", width: "90%" }}
+                  title="Find Hotel"
+                  // onClick={handleSubmit}
+
+                  type="submit"
+                />
               </div>
-              <div className="search-item">
-                <label>kids</label>
-                <input type="number" placeholder="kids" {...changeChildren} />
-              </div>
-              <div className="search-item">
-                <label>rooms </label>
-                <input type="number" placeholder="rooms" {...changeRoom} />
-              </div>
-            </div>
-            <div style={{ padding: "10px 0" }} className="small-button">
-              <Button
-                style={{ background: "#003580", color: "#fff", width: "90%" }}
-                title="Find Hotel"
-                onClick={handleSubmit}
-              />
-            </div>
+            </form>
+
           </div>
           <div className="three"></div>
         </div>
@@ -241,20 +227,6 @@ const [order, setOrder] = useState("")
                 <p>{filterDetail}</p>
               </div>
               {show && (
-                // <div className="hidden-item">
-                //   <option onClick={hideAction} value={0}>
-                //     Top picks for your search
-                //   </option>
-                //   <option onClick={hideAction} value={1} mal="fish">
-                //     Stars (highest first)
-                //   </option>
-                //   <option onClick={hideAction} value={2} mal="cow">
-                //     Stars (lowest first)
-                //   </option>
-                //   <option onClick={hideAction} value={3} mal="fish">
-                //     Top reviewed
-                //   </option>
-                // </div>
                 <div className="hidden-item">
                   <option onClick={hideAction} value={0}>
                     Top picks for your search
@@ -262,21 +234,23 @@ const [order, setOrder] = useState("")
                   <option onClick={hideAction} value={1} mal="fish">
                     Stars (highest first)
                   </option>
-                  {/* <option onClick={superSort(2)} value={2} mal="cow">
+                  <option onClick={hideAction} value={2} mal="cow">
                     Stars (lowest first)
                   </option>
-                  <option onClick={superSort(3)} value={3} mal="fish">
+                  <option onClick={hideAction} value={3} mal="fish">
                     Top reviewed
-                  </option> */}
+                  </option>
                 </div>
+
               )}
             </div>
           </div>
           <div className="card-holder">
-            {result.map((item) => (
+            {result.sort(roids).map((item) => (
               <SearchCard item={item} key={item.id} />
             ))}
           </div>
+          {/* <CardWrapper ice={result}  cool={{egg,setEgg}}/> */}
           <div className="pag">
             <Button
               style={{ background: "#003580", color: "#fff" }}
@@ -334,7 +308,7 @@ const [order, setOrder] = useState("")
           </div>
         </div>
         <div className="card-holder">
-          {func(displayResult).map((item) => (
+          {result.map((item) => (
             <SearchCard item={item} key={item.id} />
           ))}
         </div>
