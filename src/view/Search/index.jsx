@@ -10,10 +10,8 @@ import Button from "../../components/Button";
 import CardWrapper from "../CardWrapper";
 
 export default function Search() {
-
   //import miscellanous items
   const { sort, data, person, calendar, search, filter } = ImportContent();
-
   //dropdown options for the filter option
   const filterOptions = [
     "Top picks for your search",
@@ -21,13 +19,11 @@ export default function Search() {
     "Stars (lowest first)",
     "Top reviewed",
   ];
-
   //controls visiblity of drop downs
   const [show, setShow] = useState(false);
-
   //displays the current filter option
   const [filterDetail, setFilterDetail] = useState(filterOptions[0]);
-
+  //context
   const context = useContext(SearchContext);
 
   //search query
@@ -37,65 +33,17 @@ export default function Search() {
   const { result, length } = useSearch(searchQuery, data);
 
   //controls the sorting order
-  const [displayResult, setDisplayResult] = useState(result)
+
   const [order, setOrder] = useState(0)
 
   //superSort this controls how the returned result is sorted
-  // const superSort = () => {
-  //   if (order === 0) {
-  //     console.log("Top picks for your search")
-  //     const sorted =[...displayResult].sort((a,b)=>{
-  //        return b.rating[0] - a.rating[0];
-  //     })
-  //     setDisplayResult(sorted)
-  //     setOrder("0")
-  //     history("/search")
 
-  //   }
-  //   if (order === 1) {
-  //     const sorted =[...displayResult].sort((a,b)=>{
-  //        return b.rating[0] - a.rating[0];
-  //       // return b.review.length - a.review.length;
-  //     })
-  //     setDisplayResult(sorted)
-  //     setOrder(1)
+  const superSort = (a, b) => {
+    if (order === 1) { return b.rating[0] - a.rating[0]  }
+    if (order === 2) { return a.rating[0] - b.rating[0]  }
+    if (order === 3) { return b.review.length - a.review.length; }
 
-  //     console.log("Stars (highest first)")
-  //     history("/search")
-
-
-  //   }
-  //   if (order === 2) {
-  //     const sorted =[...displayResult.sort((a,b)=>{
-  //       return a.rating[0] - b.rating[0];
-  //    })
-  //    setDisplayResult(sorted)
-  //    setOrder(2)
-
-  //     console.log("Stars (lowest first)")
-  //     history("/search")
-
-  //   }
-
-  //   if (order === 3) {
-  //     const sorted =displayResult.sort((a,b)=>{
-  //      return b.rating[0] - a.rating[0];
-
-  //    })
-  //    setDisplayResult(sorted)
-  //    setOrder(3)
-  //    history("/search")
-
-
-  //     console.log("Top reviewed",)
-  //   }
-
-
-  // }
-
-  const roids = (a, b) => {
-    if (order === 0) { return a.review.length - b.review.length; }
-    else { return a.rating[0] - b.rating[0] };
+    else { return a.title.localeCompare(b.title) };
   }
 
   //changes drop down visiblity
@@ -103,8 +51,6 @@ export default function Search() {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
     setOrder(Number(e.target.value))
-
-
   };
   //input element state and functions
   const {
@@ -134,8 +80,6 @@ export default function Search() {
   const HandleSubmit = (e) => {
     e.preventDefault();
     setSearchQuery({ location, checkIn, checkOut, adult, room });
-
-
     resetLocation();
     resetAdult();
     resetCheckIn();
@@ -246,9 +190,18 @@ export default function Search() {
             </div>
           </div>
           <div className="card-holder">
-            {result.sort(roids).map((item) => (
+            {result.sort(superSort).map((item) => (
               <SearchCard item={item} key={item.id} />
             ))}
+            {result.sort(superSort).map((item) => {
+              const {roomType}=item
+              return(
+              <p>
+
+            {roomType[0].price}
+
+              </p>
+            )})}
           </div>
           {/* <CardWrapper ice={result}  cool={{egg,setEgg}}/> */}
           <div className="pag">
