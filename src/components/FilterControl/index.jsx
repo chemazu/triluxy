@@ -13,8 +13,8 @@ export default function FilterControl(props) {
         { one: min, two: range }, 
         { one: range + 1, two: 2 * range }, 
         { one: 2*range + 1, two: 3 * range }, 
-        { one: 3*range + 1, two: max }]
-
+        { one: 3*range + 1, two: 4*range }, 
+        { one: 4*range + 1, two: max }]
     return (
         <div>
             {childController.map(item=>(
