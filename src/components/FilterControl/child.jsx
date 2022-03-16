@@ -24,7 +24,7 @@ export default function Child(props) {
     <div>
             {power?<input type="checkbox" onChange={()=>{filter(one,two)}}/> :<input type="checkbox" onChange={unFilter}/> }
                 <span>{one}</span>
-                -
+                <span>-</span>
                 <span>{two}</span>
             </div>
   )
