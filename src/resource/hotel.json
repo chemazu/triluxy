@@ -224,7 +224,7 @@
       {
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
-        "price": 10000,
+        "price": 20000,
         "size": "34 m²",
         "bed": "2 double beds",
         "bath": "Jacuzzi , Shower, Half Bath"
@@ -292,7 +292,7 @@
       {
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
-        "price": 10000,
+        "price": 30000,
         "size": "34 m²",
         "bed": "2 double beds",
         "bath": "Jacuzzi , Shower, Half Bath"
@@ -490,7 +490,7 @@
       {
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
-        "price": 10000,
+        "price": 5000,
         "size": "34 m²",
         "bed": "2 double beds",
         "bath": "Jacuzzi , Shower, Half Bath"
@@ -546,7 +546,7 @@
       {
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
-        "price": 10000,
+        "price": 5000,
         "size": "34 m²",
         "bed": "2 double beds",
         "bath": "Jacuzzi , Shower, Half Bath"

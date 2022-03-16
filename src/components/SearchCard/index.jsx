@@ -1,12 +1,12 @@
 
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import ImportContent from '../../resource';
 import Button from '../Button';
 import "./style.scss";
-
-
 export default function SearchCard(props) {
-  const { title, review, location, rating, description,roomType } = props.item
+  const history = useNavigate()
+  const { title, review, location, rating, description,roomType,slug } = props.item
   const { hotel1, pin ,caretright} = ImportContent()
   return (
     <div className="search-card">
@@ -20,7 +20,6 @@ export default function SearchCard(props) {
           <div>
             <span >{description[0]}</span>
           </div>
-
         </div>
         <div className='last-card'>
           <div>
@@ -28,9 +27,7 @@ export default function SearchCard(props) {
               rating[0]}</p> Stars <strong style={{ color: "green" }} >"{rating[1]}"</strong>
           </div>
           <div style={{ padding: "5px 0px" }}>
-
           <span>{review.length} </span><span style={{ color: "#febb02" }} > reviews</span>
-
           </div>
           <div>
             <span>starting from </span> 
@@ -41,10 +38,12 @@ export default function SearchCard(props) {
           <div>
             <p style={{ padding: "5px 0px", color:"grey" }} >edwerewwe</p>
           </div>
-          <Button title="Book Now" />
-
+          {/* <Link to = {`/hotel/${slug}`}> */}
+          <Button title="Book Now" onClick={()=>{
+            history(`/hotel/${slug}`)
+          }} />
+          {/* </Link> */}
           <div>
-
           </div>
         </div>
       </div>
