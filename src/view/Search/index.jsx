@@ -49,7 +49,7 @@ export default function Search() {
   }
   const [price, setPrice] = useState(0)
   const [secondPrice, setSecondPrice] = useState(10000000000000)
-  const control = { price,secondPrice,setPrice, setSecondPrice }
+  const control = {setPrice, setSecondPrice }
   const superFilter = (item) => {
     const { roomType } = item
     if (roomType[0].price >= price && secondPrice >= roomType[0].price) {
