@@ -4,7 +4,7 @@ export default function Child(props) {
 
     const { control, item, metal } = props
     const { one, two } = item
-    const { setPrice, setSecondPrice} = control
+    const { setPrice, setSecondPrice,roids} = control
     const { iron, steel } = metal
     const [power, setPower] = useState(true)
     const filter = (a, b) => {

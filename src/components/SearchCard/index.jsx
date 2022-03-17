@@ -38,11 +38,11 @@ export default function SearchCard(props) {
           <div>
             <p style={{ padding: "5px 0px", color:"grey" }} >edwerewwe</p>
           </div>
-          {/* <Link to = {`/hotel/${slug}`}> */}
+  
           <Button title="Book Now" onClick={()=>{
             history(`/hotel/${slug}`)
           }} />
-          {/* </Link> */}
+
           <div>
           </div>
         </div>
@@ -63,7 +63,9 @@ export default function SearchCard(props) {
           </div>
 
         </div>
-        <div className='final-card' ><h1><img src={caretright}/></h1></div>
+        <div className='final-card' onClick={()=>{
+            history(`/hotel/${slug}`)
+          }} ><h1><img src={caretright} /></h1></div>
       </div>
     </div>
   )

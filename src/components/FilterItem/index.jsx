@@ -19,7 +19,7 @@ export default function FilterItem() {
       {/* use case and switch to loop through the filter options */}
       <div className="search filter-action">
         <h4>Search</h4>
-        <div className="filter-subaction" className="filter-subaction">
+        <div className="filter-subaction"  >
           <input type="search" />
           <p>Search</p>
           

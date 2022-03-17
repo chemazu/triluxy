@@ -184,6 +184,27 @@
         font-size: 90%;
       }
     }
+    .hidden-item{
+      
+        position: absolute;
+        z-index: 20;
+        padding: 10px;
+        background: #fff;
+        background: #ffffff;
+        border: 1px solid rgba(84, 95, 125, 0.14);
+        box-sizing: border-box;
+        box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+        border-radius: 4px;
+        position: absolute;
+        option {
+          padding: 10px 5px;
+          font-size: 80%;
+          &:hover {
+            cursor: pointer;
+            color: aqua;
+          }}
+        
+    }
     .card-holder{
       background: #f4f4f4;
       padding: 5px 0;
