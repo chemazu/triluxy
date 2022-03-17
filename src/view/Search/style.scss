@@ -50,18 +50,23 @@
       }
       .three{
         margin-top: 20px;
-        padding:20px 5%;
+        padding:20px 10%;
         background: #f4f4f4;
         width: 100%;
         div{
           padding: 7.5px 0;
+          div{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start
+          }
           span{
-            padding: 0 25px;
-            text-align: right;
-            width: 20px;
+            padding: 0 15px;
+    
+            max-width: 45px;
             font-weight: 700;
             letter-spacing: 2px;
-            line-height: 20px;
+            // line-height: 20px;
           }
         }
       }

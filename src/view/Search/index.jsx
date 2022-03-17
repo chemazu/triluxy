@@ -48,8 +48,8 @@ export default function Search() {
     else { return a.title.localeCompare(b.title) };
   }
   const [price, setPrice] = useState(0)
-  const [secondPrice, setSecondPrice] = useState(1000000000)
-  const control = { setPrice, setSecondPrice }
+  const [secondPrice, setSecondPrice] = useState(10000000000000)
+  const control = { price,secondPrice,setPrice, setSecondPrice }
   const superFilter = (item) => {
     const { roomType } = item
     if (roomType[0].price >= price && secondPrice >= roomType[0].price) {
@@ -159,9 +159,9 @@ const finalResult = result.sort(superSort).filter(superFilter)
             </form>
           </div>
           <div className="three">
-            <h2>
+            <h3>
               Filter
-            </h2>
+            </h3>
             <FilterControl item={result} price={price} control={control} />
           </div>
         </div>

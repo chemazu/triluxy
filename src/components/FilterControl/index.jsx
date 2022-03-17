@@ -8,7 +8,7 @@ export default function FilterControl(props) {
     const max = Math.max(...egg)
     const min = Math.min(...egg)
     const range = (max - min) / 4
-    console.log(max, min)
+    const details = {max,min,range}
     const childController = [
         { one: min, two: range }, 
         { one: range + 1, two: 2 * range }, 
@@ -16,9 +16,9 @@ export default function FilterControl(props) {
         { one: 3*range + 1, two: 4*range }, 
         { one: 4*range + 1, two: max }]
     return (
-        <div>
+        <div className='filter holder'>
             {childController.map(item=>(
-            <Child control={control}  item={item}/>
+            <Child control={control}   details ={details} yuy ={childController.indexOf(item)} item={item}/>
             ))}
         </div>
     )
