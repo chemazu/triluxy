@@ -1,16 +1,25 @@
 import React, { useState } from "react";
+import useSearch from "../../hooks/search-hook";
+
 import "./style.scss";
 import { useInput } from "../../hooks/input-hook";
 import Button from "../../components/Button";
 import CarouselApp from "../../components/Carousel";
 import bar from "../../imgs/bar.svg";
 import RoomOption from "../../components/RoomOption";
+import { useParams } from "react-router-dom";
+import ImportContent from "../../resource";
 
 export default function HotelDetail() {
+  const { data } = ImportContent();
+  const { id } = useParams();
   const [changeBooking, setChangeBooking] = useState(false);
   const [roomInfo, setRoomInfo] = useState("");
   const [totalPrice, setTotalPrice] = useState(0);
   const [count, setCount] = useState(1);
+  const { result, length } = useSearch(id, data);
+  console.log(result);
+
   const {
     value: checkIn,
     change: changeCheckIn,
@@ -46,48 +55,29 @@ export default function HotelDetail() {
     resetChildren();
   };
 
-  const hotelDetail = {
-    title: "Lagos Marriott Hotel Ikeja",
-    address: "122 Joel Ogunnaike St, GRA 100271, Ikeja Phone: 0908 825 2020",
-    shortdescription:
-      "Flanked by palm trees, this upscale hotel is 1 km from Ikeja Golf Club and 7 km from Murtala Muhammed International Airport.There's a lobby bar, an informal grill, and a buffet restaurant featuring a terrace",
-    roomTypes: [
-      {
-        slug: "doubleRoom",
-        title: "Double Room with Two Double Beds",
-        price: 10000,
-        size: "34 m²",
-        bed: "2 double beds",
-        bath: "Jacuzzi , Shower, Half Bath",
-      },
-      {
-        slug: "kingRoom",
-        title: "King Guest Room",
-        price: 20000,
-        size: "34 m²",
-        bed: "2 double beds",
-        bath: "Jacuzzi , Shower, Half Bath",
-      },
-      {
-        slug: "juniorRoom",
-        title: "Junior King Suite",
-        price: 30000,
-        size: "34 m²",
-        bed: "2 double beds",
-        bath: "Jacuzzi , Shower, Half Bath",
-      },
-    ],
-  };
-  const { title, address, shortdescription, longDescription, roomTypes } =
-    hotelDetail;
+  const {
+    title,
+    address,
+    roomType,
+    description,
+    review,
+    rating,
+    ammenities,
+    terms,
+    hotelType,
+    roomNumber,
+  } = result[0];
 
   return (
     <div className="hotel-detail">
       <div className="hotel-title">
         <h1>{title}</h1>
         <p>Address: {address}</p>
-        <p>4.7 &#9734; &#9733; &#9733; &#9733; &#9733;2,315 Google reviews</p>
-        <p>{shortdescription}</p>
+        <p>
+          {rating[0]} &#9734; &#9733; &#9733; &#9733; &#9733; {review.length}{" "}
+          Google reviews
+        </p>
+        <p>{description[0]}</p>
       </div>
       <div className="gallery">
         <div className="hotel-summary">
@@ -95,12 +85,12 @@ export default function HotelDetail() {
           <div className="map"></div>
           <div className="hotel-type">
             <div>
-              <strong>Hotel Type</strong>
-              <p>Suites</p>
+              <strong>Hotel type</strong>
+              <p>{hotelType}</p>
             </div>
             <div>
               <strong>Number of Rooms</strong>
-              <p>169</p>
+              <p>{roomNumber}</p>
             </div>
             <div>
               <strong>Room Types</strong>
@@ -108,76 +98,25 @@ export default function HotelDetail() {
             </div>
           </div>
           <div className="amenities-detail">
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
-            <div className="single-amenity">
-              <img src={bar} alt="bar" />
-              <p>Bar/Lounge</p>
-            </div>
+            {ammenities.map((item) => (
+              <div className="single-amenity">
+                <img src={bar} alt="bar" />
+                <p>{item}</p>
+              </div>
+            ))}
           </div>
         </div>
         <CarouselApp />
       </div>
       <div className="description">
         <div className="description-text">
-          <p>
-            Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott
-            Hotel Ikeja offers accommodation with a restaurant, free private
-            parking, an outdoor swimming pool and a bar. Featuring family rooms,
-            this property also provides guests with a terrace. The accommodation
-            features a 24-hour front desk, room service and currency exchange
-            for guests.
-          </p>
-          <p>
-            The units come with air conditioning, a flat-screen TV with
-            satellite channels, a minibar, a kettle, a shower, a hairdryer and a
-            desk. All rooms feature a private bathroom, free toiletries and bed
-            linen.
-          </p>
-          <p>The hotel offers a continental or buffet breakfast.</p>
-          <p>
-            National Art Theatre is 12 km from Lagos Marriott Hotel Ikeja, while
-            Iga Idungaran-OBA Of Lagos Palace is 14 km away.
-          </p>
-          <p>
-            Couples particularly like the location — they rated it 8.8 for a
-            two-person trip.
-          </p>
+          <p>{description[0]}</p>
+          <p>{description[1]}</p>
           <div className="terms">
             <h3>Terms and Conditions</h3>
-            <p>Check-in time 12 noon</p>
-            <p>Check-out time 12 noon</p>
-            <p>Pets are not allowed.</p>
-            <p>No Smoking in the rooms.</p>
-            <p>Babies are allowed in rooms.</p>
-            <p>Cash and Card payments are accepted.</p>
-            <p>Cancellation policy- 2 days to reservation date.</p>
+            {terms.map((item) => (
+              <p>{item}</p>
+            ))}
           </div>
         </div>
         <div className="room-booking">
@@ -222,7 +161,7 @@ export default function HotelDetail() {
               ) : null}
             </form>
           </div>
-          {roomTypes.map((roomType) => (
+          {roomType.map((roomType) => (
             <RoomOption
               roomType={roomType}
               setBooking={setChangeBooking}

@@ -56,8 +56,10 @@
     grid-template-columns: 5fr 3fr;
     grid-gap: 150px;
     .description-text {
-      display: grid;
-      grid-row-gap: 10px;
+      grid-row-gap: 2px;
+      p {
+        padding: 20px 0px;
+      }
     }
     .terms {
       display: grid;
@@ -73,7 +75,7 @@
       padding-top: 20px;
       form {
         grid-template-columns: 1fr;
-        
+
         .date-search,
         .info-search {
           display: flex;
@@ -83,7 +85,6 @@
           border: 5px solid #febb02;
 
           border-bottom: 0px;
-
         }
       }
     }
@@ -113,7 +114,7 @@
         grid-column-gap: 5px;
       }
     }
-    button{
+    button {
       width: 100%;
     }
   }

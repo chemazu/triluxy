@@ -33,33 +33,39 @@ export default function Search() {
 
   //controls the sorting order
 
-  const [order, setOrder] = useState(0)
+  const [order, setOrder] = useState(0);
 
   //superSort this controls how the returned result is sorted
 
   const superSort = (a, b) => {
-    if (order === 1) { return b.rating[0] - a.rating[0] }
-    if (order === 2) { return a.rating[0] - b.rating[0] }
-    if (order === 3) { return b.review.length - a.review.length; }
-
-    else { return a.title.localeCompare(b.title) };
-  }
-  const [price, setPrice] = useState(0)
-  const [secondPrice, setSecondPrice] = useState(10000000000000)
-  const control = {setPrice, setSecondPrice  }
+    if (order === 1) {
+      return b.rating[0] - a.rating[0];
+    }
+    if (order === 2) {
+      return a.rating[0] - b.rating[0];
+    }
+    if (order === 3) {
+      return b.review.length - a.review.length;
+    } else {
+      return a.title.localeCompare(b.title);
+    }
+  };
+  const [price, setPrice] = useState(0);
+  const [secondPrice, setSecondPrice] = useState(10000000000000);
+  const control = { setPrice, setSecondPrice };
   const superFilter = (item) => {
-    const { roomType } = item
+    const { roomType } = item;
     if (roomType[0].price >= price && secondPrice >= roomType[0].price) {
       return true;
     }
     return false;
-  }
+  };
 
   //changes drop down visiblity
   const hideAction = (e) => {
     setShow(false);
     setFilterDetail(filterOptions[e.target.value]);
-    setOrder(Number(e.target.value))
+    setOrder(Number(e.target.value));
   };
   //input element state and functions
   const {
@@ -94,12 +100,11 @@ export default function Search() {
     resetCheckOut();
     resetRoom();
     resetChildren();
-    setPrice(0)
-    setSecondPrice(10000000000000)
-
+    setPrice(0);
+    setSecondPrice(10000000000000);
   };
 
-const finalResult = result.sort(superSort).filter(superFilter)
+  const finalResult = result.sort(superSort).filter(superFilter);
 
   return (
     <div className="searchQuerys">
@@ -117,18 +122,18 @@ const finalResult = result.sort(superSort).filter(superFilter)
           <div className="two">
             <h3>Search</h3>
             <form onSubmit={HandleSubmit}>
-            <div className="place-search">
-              <div className="search-item">
-                <label>Destination </label>
-                <input
-                  type="text"
-                  list="listid"
-                  {...changeLocation}
-                  placeholder="Where are you going?"
-                />
+              <div className="place-search">
+                <div className="search-item">
+                  <label>Destination </label>
+                  <input
+                    type="text"
+                    list="listid"
+                    {...changeLocation}
+                    placeholder="Where are you going?"
+                  />
+                </div>
               </div>
-            </div>
-            
+
               <div className="date-search">
                 <div className="search-item">
                   <label>Check-in </label>
@@ -163,9 +168,7 @@ const finalResult = result.sort(superSort).filter(superFilter)
             </form>
           </div>
           <div className="three">
-            <h3>
-              Filter
-            </h3>
+            <h3>Filter</h3>
             <FilterControl item={result} price={price} control={control} />
           </div>
         </div>
@@ -190,10 +193,10 @@ const finalResult = result.sort(superSort).filter(superFilter)
                   <option onClick={hideAction} value={0}>
                     Top picks for your search
                   </option>
-                  <option onClick={hideAction} value={1}  >
+                  <option onClick={hideAction} value={1}>
                     Stars (highest first)
                   </option>
-                  <option onClick={hideAction} value={2}  >
+                  <option onClick={hideAction} value={2}>
                     Stars (lowest first)
                   </option>
                   <option onClick={hideAction} value={3}>
@@ -225,61 +228,62 @@ const finalResult = result.sort(superSort).filter(superFilter)
       </div>
       {/* Mobile View */}
       <div className="mobile">
-        
-        
         <div className="search">
           <form onSubmit={HandleSubmit}>
-          <div className="place-search">
-            <div className="search-item">
-              <img src={search} alt="" />
-              <input
-                type="text"
-                list="listid"
-                {...changeLocation}
-                placeholder="Where are you going?"
-              />
-              <datalist id="listid">
-                <option label="Popular Destinations" value="&zwnj;" />{" "}
-                <option value="Abuja" label="Nigeria" />
-                <option value="Lagos" label="Nigeria" />
-                <option value="Ikeja" label="Nigeria" />
-                <option value="Lekki" label="Nigeria" />
-                <option value="Ibadan" label="Nigeria" />
-              </datalist>
-            </div>
-          </div>
-              <div className="date-search" style={{border:"0px"}}>
-                <div className="search-item">
-                  <label>Check-in </label>
-                  <input type="date" {...changeCheckIn} />
-                </div>
-                <div className="search-item">
-                  <label>Check-out </label>
-                  <input type="date" {...changeCheckOut} />
-                </div>
-              </div>
-              <div className="info-search">
-                <div className="search-item">
-                  <label>adults </label>
-                  <input type="number" placeholder="adults" {...changeAdult} />
-                </div>
-                <div className="search-item">
-                  <label>kids</label>
-                  <input type="number" placeholder="kids" {...changeChildren} />
-                </div>
-                <div className="search-item">
-                  <label>rooms </label>
-                  <input type="number" placeholder="rooms" {...changeRoom} />
-                </div>
-              </div>
-              <div style={{ padding: "10px",textAlign:"center" }} className="small-button">
-                <Button
-                  style={{ background: "#003580", color: "#fff", width: "95%" }}
-                  title="Find Hotel"
-                  type="submit"
+            <div className="place-search">
+              <div className="search-item">
+                <img src={search} alt="" />
+                <input
+                  type="text"
+                  list="listid"
+                  {...changeLocation}
+                  placeholder="Where are you going?"
                 />
+                <datalist id="listid">
+                  <option label="Popular Destinations" value="&zwnj;" />{" "}
+                  <option value="Abuja" label="Nigeria" />
+                  <option value="Lagos" label="Nigeria" />
+                  <option value="Ikeja" label="Nigeria" />
+                  <option value="Lekki" label="Nigeria" />
+                  <option value="Ibadan" label="Nigeria" />
+                </datalist>
               </div>
-            </form>
+            </div>
+            <div className="date-search" style={{ border: "0px" }}>
+              <div className="search-item">
+                <label>Check-in </label>
+                <input type="date" {...changeCheckIn} />
+              </div>
+              <div className="search-item">
+                <label>Check-out </label>
+                <input type="date" {...changeCheckOut} />
+              </div>
+            </div>
+            <div className="info-search">
+              <div className="search-item">
+                <label>adults </label>
+                <input type="number" placeholder="adults" {...changeAdult} />
+              </div>
+              <div className="search-item">
+                <label>kids</label>
+                <input type="number" placeholder="kids" {...changeChildren} />
+              </div>
+              <div className="search-item">
+                <label>rooms </label>
+                <input type="number" placeholder="rooms" {...changeRoom} />
+              </div>
+            </div>
+            <div
+              style={{ padding: "10px", textAlign: "center" }}
+              className="small-button"
+            >
+              <Button
+                style={{ background: "#003580", color: "#fff", width: "95%" }}
+                title="Find Hotel"
+                type="submit"
+              />
+            </div>
+          </form>
           {/* <div className="mini-result">
             <img src={calendar} />
             <span>
@@ -291,37 +295,36 @@ const finalResult = result.sort(superSort).filter(superFilter)
         </div>
         <div className="mini-result">
           <div
-          onClick={() => {
-            setShow(true);
-          }}>
+            onClick={() => {
+              setShow(true);
+            }}
+          >
             <img src={sort} />
             <span>Sort</span>
-            
-            </div >
-           
+          </div>
+
           <div>
             <img src={filter} />
             <span>Filter</span>
           </div>
         </div>
-        
-        {show && (
-                <div className="hidden-item">
-                  <option onClick={hideAction} value={0}>
-                    Top picks for your search
-                  </option>
-                  <option onClick={hideAction} value={1} mal="fish">
-                    Stars (highest first)
-                  </option>
-                  <option onClick={hideAction} value={2} mal="cow">
-                    Stars (lowest first)
-                  </option>
-                  <option onClick={hideAction} value={3} mal="fish">
-                    Top reviewed
-                  </option>
-                </div>
 
-              )}
+        {show && (
+          <div className="hidden-item">
+            <option onClick={hideAction} value={0}>
+              Top picks for your search
+            </option>
+            <option onClick={hideAction} value={1} mal="fish">
+              Stars (highest first)
+            </option>
+            <option onClick={hideAction} value={2} mal="cow">
+              Stars (lowest first)
+            </option>
+            <option onClick={hideAction} value={3} mal="fish">
+              Top reviewed
+            </option>
+          </div>
+        )}
         <div className="card-holder">
           {finalResult.map((item) => (
             <SearchCard item={item} key={item.id} />

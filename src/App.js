@@ -14,16 +14,19 @@ import useSearch from "./hooks/search-hook";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState({ location: "" });
-  const {data} = ImportContent()
+  const [bookingInfo, setBookingInfo] = useState("");
+  const { data } = ImportContent();
   const { result, length } = useSearch(searchQuery, data);
 
   return (
     <div className="App">
       <Header />
-      <SearchContext.Provider value={{ searchQuery, setSearchQuery }}>
+      <SearchContext.Provider
+        value={{ searchQuery, setSearchQuery, bookingInfo, setBookingInfo }}
+      >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Search result={result}/>} />
+          <Route path="/search" element={<Search result={result} />} />
           <Route path="/hotel/:id" element={<HotelDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

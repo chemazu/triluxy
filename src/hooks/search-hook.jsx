@@ -3,6 +3,9 @@ export default function useSearch(a, data) {
     if (item.location == a.location) {
       return true;
     }
+    if (item.slug == a) {
+      return true;
+    }
     return false;
   });
   return {

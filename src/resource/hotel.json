@@ -2,16 +2,20 @@
   {
     "_id": 1,
     "title": "Sheraton Hotel Ikeja",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "sheraton_ikeja",
     "address": "122 Mobolaji bank Anthony way, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 10000,
@@ -20,6 +24,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -28,6 +34,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -76,16 +84,20 @@
   {
     "_id": 2,
     "title": "Abuja Marriott Hotel Ikeja",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "marriot_abuja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Abuja",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 10000,
@@ -94,6 +106,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -102,6 +116,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -138,16 +154,20 @@
   {
     "_id": 3,
     "title": "Lagos Marriott Hotel Lekki",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "marriot_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lekki",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 10000,
@@ -156,6 +176,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -164,6 +186,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -212,16 +236,20 @@
   {
     "_id": 2,
     "title": "Presken Hotel Ikeja",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "presken_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 20000,
@@ -230,6 +258,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -238,6 +268,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -280,16 +312,20 @@
   {
     "_id": 3,
     "title": "Lagos Marriott Hotel Ikeja",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "marriot_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 30000,
@@ -298,6 +334,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -306,6 +344,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -342,16 +382,20 @@
   {
     "_id": 2,
     "title": "Abuja Marriott Hotel Ikeja",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "marriot_abuja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Abuja",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 10000,
@@ -360,6 +404,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -368,6 +414,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -410,16 +458,20 @@
   {
     "_id": 3,
     "title": "Lagos Marriott Hotel Lekki",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "marriot_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lekki",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 10000,
@@ -428,6 +480,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -436,6 +490,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -478,16 +534,20 @@
   {
     "_id": 4,
     "title": "Burj Khalifa Ikeja",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "burj_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 5000,
@@ -496,6 +556,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -504,6 +566,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
@@ -534,16 +598,20 @@
   {
     "_id": 5,
     "title": "Ibis Royale",
+    "hotelType": "Suite",
+    "roomNumber": 23,
     "slug": "ibis_ikeja",
     "address": "122 Ajao estate Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": "cityview, outdoorpool, bbq,wifi,parking",
+    "ammenities": ["cityview", "outdoorpool", "bbq", "wifi", "parking"],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
     ],
     "roomType": [
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "doubleRoom",
         "title": "Double Room with Two Double Beds",
         "price": 5000,
@@ -552,6 +620,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "kingRoom",
         "title": "King Guest Room",
         "price": 20000,
@@ -560,6 +630,8 @@
         "bath": "Jacuzzi , Shower, Half Bath"
       },
       {
+        "hotelType": "Suite",
+        "roomNumber": 23,
         "slug": "juniorRoom",
         "title": "Junior King Suite",
         "price": 30000,
