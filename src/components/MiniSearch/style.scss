@@ -1,0 +1,49 @@
+.two {
+  display: grid;
+  background: #febb02;
+  border: 15px solid #febb02;
+  h3 {
+    padding-bottom: 10px;
+  }
+
+  div {
+    padding-left: 0;
+    padding-right: 0;
+    background: #febb02;
+  }
+  .info-search {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    div {
+      input {
+        width: 60%;
+      }
+    }
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    div {
+      border: 2px solid #febb02;
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .two {
+    background: #fff;
+    border: 2px solid #fff;
+    form {
+      div {
+        border: 2px solid #fff;
+        padding: 5px;
+      }
+    }
+    div {
+      background: #fff;
+    }
+    h3 {
+      padding: 10px;
+    }
+  }
+}

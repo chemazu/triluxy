@@ -1,16 +1,16 @@
 import React, { useContext, useState } from "react";
 import useSearch from "../../hooks/search-hook";
-import { useInput } from "../../hooks/input-hook";
 import { SearchContext } from "../../context/SearchContext";
 import "./style.scss";
 import ImportContent from "../../resource";
 import SearchCard from "../../components/SearchCard";
 import Button from "../../components/Button";
 import FilterControl from "../../components/FilterControl";
+import MiniSearch from "../../components/MiniSearch";
 
 export default function Search() {
   //import miscellanous items
-  const { sort, data, person, calendar, search, filter } = ImportContent();
+  const { sort, data, filter } = ImportContent();
   //dropdown options for the filter option
   const filterOptions = [
     "Top picks for your search",
@@ -32,7 +32,6 @@ export default function Search() {
   const { result, length } = useSearch(searchQuery, data);
 
   //controls the sorting order
-
   const [order, setOrder] = useState(0);
 
   //superSort this controls how the returned result is sorted
@@ -67,42 +66,6 @@ export default function Search() {
     setFilterDetail(filterOptions[e.target.value]);
     setOrder(Number(e.target.value));
   };
-  //input element state and functions
-  const {
-    value: location,
-    change: changeLocation,
-    reset: resetLocation,
-  } = useInput(searchQuery.location);
-  const {
-    value: checkIn,
-    change: changeCheckIn,
-    reset: resetCheckIn,
-  } = useInput("");
-  const {
-    value: checkOut,
-    change: changeCheckOut,
-    reset: resetCheckOut,
-  } = useInput("");
-  const { value: adult, change: changeAdult, reset: resetAdult } = useInput("");
-  const {
-    value: children,
-    change: changeChildren,
-    reset: resetChildren,
-  } = useInput("");
-  const { value: room, change: changeRoom, reset: resetRoom } = useInput("");
-
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-    setSearchQuery({ location, checkIn, checkOut, adult, room });
-    resetLocation();
-    resetAdult();
-    resetCheckIn();
-    resetCheckOut();
-    resetRoom();
-    resetChildren();
-    setPrice(0);
-    setSecondPrice(10000000000000);
-  };
 
   const finalResult = result.sort(superSort).filter(superFilter);
 
@@ -119,54 +82,7 @@ export default function Search() {
             </span>
             <span>Search result : </span>
           </div>
-          <div className="two">
-            <h3>Search</h3>
-            <form onSubmit={HandleSubmit}>
-              <div className="place-search">
-                <div className="search-item">
-                  <label>Destination </label>
-                  <input
-                    type="text"
-                    list="listid"
-                    {...changeLocation}
-                    placeholder="Where are you going?"
-                  />
-                </div>
-              </div>
-
-              <div className="date-search">
-                <div className="search-item">
-                  <label>Check-in </label>
-                  <input type="date" {...changeCheckIn} />
-                </div>
-                <div className="search-item">
-                  <label>Check-out </label>
-                  <input type="date" {...changeCheckOut} />
-                </div>
-              </div>
-              <div className="info-search">
-                <div className="search-item">
-                  <label>adults </label>
-                  <input type="number" placeholder="adults" {...changeAdult} />
-                </div>
-                <div className="search-item">
-                  <label>kids</label>
-                  <input type="number" placeholder="kids" {...changeChildren} />
-                </div>
-                <div className="search-item">
-                  <label>rooms </label>
-                  <input type="number" placeholder="rooms" {...changeRoom} />
-                </div>
-              </div>
-              <div style={{ padding: "10px 0" }} className="small-button">
-                <Button
-                  style={{ background: "#003580", color: "#fff", width: "90%" }}
-                  title="Find Hotel"
-                  type="submit"
-                />
-              </div>
-            </form>
-          </div>
+          <MiniSearch control={control} />
           <div className="three">
             <h3>Filter</h3>
             <FilterControl item={result} price={price} control={control} />
@@ -229,69 +145,7 @@ export default function Search() {
       {/* Mobile View */}
       <div className="mobile">
         <div className="search">
-          <form onSubmit={HandleSubmit}>
-            <div className="place-search">
-              <div className="search-item">
-                <img src={search} alt="" />
-                <input
-                  type="text"
-                  list="listid"
-                  {...changeLocation}
-                  placeholder="Where are you going?"
-                />
-                <datalist id="listid">
-                  <option label="Popular Destinations" value="&zwnj;" />{" "}
-                  <option value="Abuja" label="Nigeria" />
-                  <option value="Lagos" label="Nigeria" />
-                  <option value="Ikeja" label="Nigeria" />
-                  <option value="Lekki" label="Nigeria" />
-                  <option value="Ibadan" label="Nigeria" />
-                </datalist>
-              </div>
-            </div>
-            <div className="date-search" style={{ border: "0px" }}>
-              <div className="search-item">
-                <label>Check-in </label>
-                <input type="date" {...changeCheckIn} />
-              </div>
-              <div className="search-item">
-                <label>Check-out </label>
-                <input type="date" {...changeCheckOut} />
-              </div>
-            </div>
-            <div className="info-search">
-              <div className="search-item">
-                <label>adults </label>
-                <input type="number" placeholder="adults" {...changeAdult} />
-              </div>
-              <div className="search-item">
-                <label>kids</label>
-                <input type="number" placeholder="kids" {...changeChildren} />
-              </div>
-              <div className="search-item">
-                <label>rooms </label>
-                <input type="number" placeholder="rooms" {...changeRoom} />
-              </div>
-            </div>
-            <div
-              style={{ padding: "10px", textAlign: "center" }}
-              className="small-button"
-            >
-              <Button
-                style={{ background: "#003580", color: "#fff", width: "95%" }}
-                title="Find Hotel"
-                type="submit"
-              />
-            </div>
-          </form>
-          {/* <div className="mini-result">
-            <img src={calendar} />
-            <span>
-              {searchQuery.checkIn} - {searchQuery.checkOut}
-            </span>
-            <img src={person} />
-            <span>{searchQuery.adult} adults</span>
-          </div> */}
+          <MiniSearch control={control} />
         </div>
         <div className="mini-result">
           <div
@@ -314,13 +168,13 @@ export default function Search() {
             <option onClick={hideAction} value={0}>
               Top picks for your search
             </option>
-            <option onClick={hideAction} value={1} mal="fish">
+            <option onClick={hideAction} value={1}>
               Stars (highest first)
             </option>
-            <option onClick={hideAction} value={2} mal="cow">
+            <option onClick={hideAction} value={2}>
               Stars (lowest first)
             </option>
-            <option onClick={hideAction} value={3} mal="fish">
+            <option onClick={hideAction} value={3}>
               Top reviewed
             </option>
           </div>

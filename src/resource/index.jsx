@@ -3,14 +3,12 @@ import calendar from "./calendar.svg";
 import person from "./person.svg";
 import search from "./search.svg";
 import filter from "./filter.svg";
+import bar from "./bar.svg";
+
 import hotel1 from "./hotel1.jpg";
+
 import pin from "./pin.svg";
 import caretright from "./caretright.svg";
-
-
-
-
-
 
 import data from "./hotel.json";
 
@@ -24,6 +22,7 @@ export default function ImportContent() {
     filter,
     hotel1,
     pin,
-    caretright
+    caretright,
+    bar,
   };
 }

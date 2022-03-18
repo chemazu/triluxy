@@ -31,29 +31,33 @@ export default function CarouselApp() {
     fontWeight: "bold",
   };
   return (
-    <div style={{
-      padding: "0 40px"
-    }}>
-        <Carousel
-          data={data}
-          time={2000}
-          width="100%"
-          height="49vh"
-          captionStyle={captionStyle}
-          radius="0px"
-          slideNumber={true}
-          slideNumberStyle={slideNumberStyle}
-          captionPosition="bottom"
-          automatic={true}
-          dots={true}
-          pauseIconColor="white"
-          pauseIconSize="40px"
-          slideBackgroundColor="darkgrey"
-          slideImageFit="cover"
-          style={{}}
-          thumbnails={true}
-          thumbnailWidth="100px"
-        />
-        </div>
+    <div
+      style={
+        {
+          // padding: "0 40px"
+        }
+      }
+    >
+      <Carousel
+        data={data}
+        time={2000}
+        width="100%"
+        height="49vh"
+        captionStyle={captionStyle}
+        radius="0px"
+        slideNumber={true}
+        slideNumberStyle={slideNumberStyle}
+        captionPosition="bottom"
+        automatic={true}
+        dots={true}
+        pauseIconColor="white"
+        pauseIconSize="40px"
+        slideBackgroundColor="darkgrey"
+        slideImageFit="cover"
+        style={{}}
+        thumbnails={true}
+        thumbnailWidth="100px"
+      />
+    </div>
   );
 }
