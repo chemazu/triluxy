@@ -29,7 +29,6 @@
         }
       }
     }
-    
       .description{
       padding: 20px 5%;
 
@@ -100,6 +99,82 @@
           }
         }
       
+    }
+  }
+  .mobile{
+    display: none;
+
+      line-height: 25px;
+
+    .right{
+      padding: 30px 5%;
+      font-size: 90%;
+      h2, p{
+        padding: 10px 0;
+      }
+      
+    }
+    .room-booking {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      .search {
+        padding-top: 20px;
+        form {
+          grid-template-columns: 1fr;
+  
+          .date-search,
+          .info-search {
+            display: flex;
+            border: 5px solid #febb02;
+          }
+          .date-search {
+            border: 5px solid #febb02;
+  
+            border-bottom: 0px;
+          }
+        }
+      }
+      .room-options {
+        padding: 20px;
+        display: grid;
+        grid-row-gap: 20px;
+        border-bottom: 1px solid #febb02;
+        border-top: 1px solid #febb02;
+        &:hover {
+          border: 2px solid #febb02;
+          padding: 15px;
+  
+          background: #eaf0f3;
+        }
+  
+        .top {
+          display: grid;
+          grid-template-columns: 7fr 3fr;
+        }
+        .middle {
+          display: flex;
+          justify-content: space-between;
+        }
+        .bottom {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-column-gap: 5px;
+        }
+      }
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+@media screen and (max-width:480px) {
+  .hotel-detail{
+    .desktop{
+      display: none;
+    }
+    .mobile{
+      display: block;
     }
   }
 }

@@ -186,7 +186,84 @@ export default function HotelDetail() {
       </div>
    
       </div>
-      <div className="mobile"></div>
+      <div className="mobile">
+      <div className="right">
+          <div className="hotel-title" style={{ padding: "15px 0px" }}>
+            <h2>{title}</h2>
+            <p style={{ color: "#febb02" }}>
+              {rating[0]} &#9734; &#9733; &#9733; &#9733; &#9733;
+              <span style={{ padding: "0px 10px", color: "green" }}>
+                {review.length} Google reviews
+              </span>
+            </p>
+            <p style={{ padding: "5px 0px" }}> {address}</p>
+            <p>{description[0]}</p>
+          </div>
+          <CarouselApp />
+        </div>
+        <div className="room-booking">
+          <h4>
+            Select a room type and the number of rooms you want to reserve.
+          </h4>
+          <div className="search">
+            <form onSubmit={handleSubmit}>
+              <div className="date-search">
+                <div className="search-item">
+                  <label>Check-in </label>
+                  <input type="date" {...changeCheckIn} />
+                </div>
+                <div className="search-item">
+                  <label>Check-out </label>
+                  <input type="date" {...changeCheckOut} />
+                </div>
+              </div>
+              <div className="info-search">
+                <div className="search-item">
+                  <label>adults </label>
+                  <input type="number" placeholder="adults" {...changeAdult} />
+                </div>
+
+                <div className="search-item">
+                  <label>children</label>
+
+                  <input
+                    type="number"
+                    placeholder="children"
+                    {...changeChildren}
+                  />
+                </div>
+              </div>
+              {changeBooking ? (
+                <div className="addBooking">
+                  <p>{count - 1}Rooms 1 Night</p>
+                  <p>AMOUNT:{totalPrice}</p>
+                  <Button onClick={handleSubmit} title="Book Now" />
+                </div>
+              ) : null}
+            </form>
+          </div>
+          {roomType.map((roomType) => (
+            <RoomOption
+              roomType={roomType}
+              setBooking={setChangeBooking}
+              key={roomType.slug}
+              getRoom={roomInfo}
+              setRoom={setRoomInfo}
+              count={count}
+              setCount={setCount}
+              totalPrice={totalPrice}
+              setTotalPrice={setTotalPrice}
+            />
+          ))}
+          {changeBooking ? (
+            <div className="addBooking">
+              <p>{count - 1}Rooms 1 Night</p>
+              <p>AMOUNT:{totalPrice}</p>
+              <Button onClick={handleSubmit} title="Book Now" />
+            </div>
+          ) : null}
+        </div>
+      </div>
     </div>
   );
 }
