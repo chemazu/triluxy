@@ -162,7 +162,6 @@ export default function Search() {
             <span>Filter</span>
           </div>
         </div>
-
         {show && (
           <div className="hidden-item">
             <option onClick={hideAction} value={0}>
@@ -189,7 +188,6 @@ export default function Search() {
             style={{ background: "#003580", color: "#fff" }}
             title="Next"
           />
-
           <div className="div">
             <span>1 of 1</span>
           </div>
