@@ -31,7 +31,9 @@ export default function Register() {
 
   return (
     <div className="register">
-      <div className="left"><h1>The time of your life is just a click away</h1></div>
+      <div className="left">
+        <h1>The time of your life is just a click away</h1>
+      </div>
       <div className="right">
         <h1>Register</h1>
         <h3>Manage all your bookings effeciently </h3>
@@ -70,8 +72,11 @@ export default function Register() {
             />
           </div>
 
-          <div className="agreement">
-            <p> <input type="checkbox"/>i agree to the <b>terms and condition</b></p>
+          <div className="agreement" style={{ height: "60px" }}>
+            <p>
+              {" "}
+              <input type="checkbox" />i agree to the <b>terms and condition</b>
+            </p>
             <Button title="Create Account" type="submit" />
           </div>
         </form>
