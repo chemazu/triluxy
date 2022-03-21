@@ -8,7 +8,7 @@ export default function RoomOption(props) {
   const setCount = props.setCount;
   const [displayCount, setDisplayCount] = useState(1);
   const [showResults, setShowResults] = React.useState(false);
-  
+
   const openMenu = () => {
     setShowResults(true);
     props.setBooking(true);
@@ -66,10 +66,7 @@ export default function RoomOption(props) {
               +
             </button>
             <span> {displayCount - 1}</span>
-            <button
-              value={slug}
-              onClick={decreaseCount}
-            >
+            <button value={slug} onClick={decreaseCount}>
               -
             </button>
           </div>

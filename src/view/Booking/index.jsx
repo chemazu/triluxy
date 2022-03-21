@@ -25,7 +25,12 @@ export default function Booking() {
     ammenities,
     terms,
   } = result[0];
-  const { checkIn, checkOut } = bookingDetails;
+  const { checkIn, checkOut, roomInfo } = bookingDetails;
+  const typeFilter = Object.keys(roomInfo)[0];
+  const selectedRoom = roomType.filter((item) => {
+    return item.slug == typeFilter;
+  });
+
   const inCheck = new Date(checkIn);
   const outCheck = new Date(checkOut);
 
@@ -76,7 +81,7 @@ export default function Booking() {
             <Link to="/search">Travelling on different dates? </Link>
           </div>
           <div className="roomType">
-            <p>You selected: </p> <p>You selected: </p>
+            <p>You selected: </p> <p>{selectedRoom[0].title}</p>
             <Link to="/search">Change your selection</Link>
           </div>
           <div className="price-summary">price summary</div>

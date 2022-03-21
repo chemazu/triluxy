@@ -68,11 +68,11 @@ export default function HotelDetail() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("booking", JSON.stringify({ bookingDetails, result }));
     resetAdult();
     resetCheckIn();
     resetCheckOut();
     resetChildren();
+    localStorage.setItem("booking", JSON.stringify({ bookingDetails, result }));
     history("/booking");
   };
   return (
