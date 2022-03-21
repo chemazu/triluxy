@@ -78,7 +78,9 @@ export default function Booking() {
               Total length of stay:
               {duration} night(s)
             </div>
-            <Link to="/search">Travelling on different dates? </Link>
+            <Link to="/search">
+              Travelling on different dates? link to hotel page{" "}
+            </Link>
           </div>
           <div className="roomType">
             <p>You selected: </p> <p>{selectedRoom[0].title}</p>
