@@ -1,4 +1,4 @@
-.hotel-detail {
+.hotelDetail {
   margin-top: 50px;
   .desktop {
     .upper {
@@ -25,94 +25,96 @@
             img {
               width: 15px;
             }
+            p {
+              font-size: 70%;
+            }
           }
         }
       }
     }
-      .description{
+    .description {
       padding: 20px 5%;
 
+      display: grid;
+      grid-template-columns: 5fr 3fr;
+      grid-gap: 150px;
+      .description-text {
+        grid-row-gap: 2px;
+        p {
+          padding: 20px 0px;
+        }
+        .terms {
+          display: grid;
+          grid-row-gap: 15px;
+        }
+      }
+      .room-booking {
+        border: 2px solid grey;
+        padding: 20px;
         display: grid;
-        grid-template-columns: 5fr 3fr;
-        grid-gap: 150px;
-        .description-text {
-          grid-row-gap: 2px;
-          p {
-            padding: 20px 0px;
-          }
-          .terms {
-            display: grid;
-            grid-row-gap: 15px;
+        grid-template-columns: 1fr;
+        .search {
+          padding-top: 20px;
+          form {
+            grid-template-columns: 1fr;
+
+            .date-search,
+            .info-search {
+              display: flex;
+              border: 5px solid #febb02;
+            }
+            .date-search {
+              border: 5px solid #febb02;
+
+              border-bottom: 0px;
+            }
           }
         }
-        .room-booking {
-          border: 2px solid grey;
+        .room-options {
           padding: 20px;
           display: grid;
-          grid-template-columns: 1fr;
-          .search {
-            padding-top: 20px;
-            form {
-              grid-template-columns: 1fr;
-      
-              .date-search,
-              .info-search {
-                display: flex;
-                border: 5px solid #febb02;
-              }
-              .date-search {
-                border: 5px solid #febb02;
-      
-                border-bottom: 0px;
-              }
-            }
+          grid-row-gap: 20px;
+          border-bottom: 1px solid #febb02;
+          border-top: 1px solid #febb02;
+          &:hover {
+            border: 2px solid #febb02;
+            padding: 15px;
+
+            background: #eaf0f3;
           }
-          .room-options {
-            padding: 20px;
+
+          .top {
             display: grid;
-            grid-row-gap: 20px;
-            border-bottom: 1px solid #febb02;
-            border-top: 1px solid #febb02;
-            &:hover {
-              border: 2px solid #febb02;
-              padding: 15px;
-      
-              background: #eaf0f3;
-            }
-      
-            .top {
-              display: grid;
-              grid-template-columns: 7fr 3fr;
-            }
-            .middle {
-              display: flex;
-              justify-content: space-between;
-            }
-            .bottom {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              grid-column-gap: 5px;
-            }
+            grid-template-columns: 7fr 3fr;
           }
-          button {
-            width: 100%;
+          .middle {
+            display: flex;
+            justify-content: space-between;
+          }
+          .bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 5px;
           }
         }
-      
+        button {
+          width: 100%;
+        }
+      }
     }
   }
-  .mobile{
+  .mobile {
     display: none;
 
-      line-height: 25px;
+    line-height: 25px;
 
-    .right{
+    .right {
       padding: 30px 5%;
       font-size: 90%;
-      h2, p{
+      h2,
+      p {
         padding: 10px 0;
       }
-      
     }
     .room-booking {
       padding: 20px;
@@ -122,7 +124,7 @@
         padding-top: 20px;
         form {
           grid-template-columns: 1fr;
-  
+
           .date-search,
           .info-search {
             display: flex;
@@ -130,7 +132,7 @@
           }
           .date-search {
             border: 5px solid #febb02;
-  
+
             border-bottom: 0px;
           }
         }
@@ -144,10 +146,10 @@
         &:hover {
           border: 2px solid #febb02;
           padding: 15px;
-  
+
           background: #eaf0f3;
         }
-  
+
         .top {
           display: grid;
           grid-template-columns: 7fr 3fr;
@@ -168,12 +170,12 @@
     }
   }
 }
-@media screen and (max-width:480px) {
-  .hotel-detail{
-    .desktop{
+@media screen and (max-width: 480px) {
+  .hotelDetail {
+    .desktop {
       display: none;
     }
-    .mobile{
+    .mobile {
       display: block;
     }
   }

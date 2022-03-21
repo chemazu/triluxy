@@ -69,7 +69,7 @@ export default function HotelDetail() {
   } = result[0];
 
   return (
-    <div className="hotel-detail">
+    <div className="hotelDetail">
       <div className="hotel-title">
         <h1>{title}</h1>
         <p>Address: {address}</p>

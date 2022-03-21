@@ -7,7 +7,7 @@
     "slug": "sheraton_ikeja",
     "address": "122 Mobolaji bank Anthony way, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -89,7 +89,7 @@
     "slug": "marriot_abuja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Abuja",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -159,7 +159,7 @@
     "slug": "marriot_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lekki",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -241,7 +241,7 @@
     "slug": "presken_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -317,7 +317,7 @@
     "slug": "marriot_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -387,7 +387,7 @@
     "slug": "marriot_abuja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Abuja",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -463,7 +463,7 @@
     "slug": "marriot_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lekki",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -539,7 +539,7 @@
     "slug": "burj_ikeja",
     "address": "122 Joel Ogunnaike Street, Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
@@ -603,7 +603,7 @@
     "slug": "ibis_ikeja",
     "address": "122 Ajao estate Ikeja GRA, 100271 Lagos, Nigeria ",
     "location": "Lagos",
-    "ammenities": ["cityview", "pool", "bbq", "wifi", "parking"],
+    "ammenities": [1, 0, 2, 3, 4],
     "description": [
       "Set in Lagos, 10 km from National Stadium Lagos, Lagos Marriott Hotel Ikeja offers accommodation with a restaurant, free private parking, an outdoor swimming pool and a bar.",
       "Featuring family rooms, this property also provides guests with a terrace. The accommodation features a 24-hour front desk, room service and currency exchange for guests."
