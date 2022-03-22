@@ -24,6 +24,7 @@ export default function Booking() {
     rating,
     ammenities,
     terms,
+    slug
   } = result[0];
   const { checkIn, checkOut, roomInfo } = bookingDetails;
   const typeFilter = Object.keys(roomInfo)[0];
@@ -62,10 +63,13 @@ export default function Booking() {
               <Button title="Change" />
             </div>
           </div> */}
+          
+          <div className="booking-info">
+
           <div className="booking-detail">
-            <p>Your booking details</p>
-            <div>
-              <div>
+            <h3 >Your booking details</h3>
+            <div className="duration">
+              <div style={{borderRight: "1px solid #e7e7e7",paddingLeft:"0px"}}>
                 <p>Check In:</p>
                 <p>{inCheck.toLocaleDateString("en-GB", options)}</p>
               </div>
@@ -74,17 +78,21 @@ export default function Booking() {
                 <p>{outCheck.toLocaleDateString("en-GB", options)}</p>
               </div>
             </div>
-            <div>
-              Total length of stay:
-              {duration} night(s)
+            <div className="length">
+              
+              
+              <p>Total length of stay:</p>
+              <h4>{duration} night(s)</h4>
+
             </div>
-            <Link to="/search">
-              Travelling on different dates? link to hotel page{" "}
+            <Link to={`/hotel/${slug}`}>
+              Travelling on different dates?{" "}
             </Link>
           </div>
           <div className="roomType">
-            <p>You selected: </p> <p>{selectedRoom[0].title}</p>
-            <Link to="/search">Change your selection</Link>
+            <p>You selected: </p> <h3>{selectedRoom[0].title}</h3>
+            <Link to={`/hotel/${slug}`}>Change your selection</Link>
+          </div>
           </div>
           <div className="price-summary">price summary</div>
         </div>
