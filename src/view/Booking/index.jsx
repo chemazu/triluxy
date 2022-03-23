@@ -44,28 +44,8 @@ export default function Booking() {
     <div className="booking-wrapper">
       <h3>Complete your booking at {title} - it only takes 30 seconds</h3>
       <div className="desktop">
-        <div className="left">
-          {/* <div className="booking-detail">
-            <div className="up">
-              <span className="check-in">Check in: </span>
-              <span>{inCheck.toLocaleDateString("en-GB", options)}</span>
-              <span>{duration} night(s)</span>
-              <span className="check-out">
-                Check out: {outCheck.getDay()}
-                {outCheck.toLocaleDateString("en-GB", options)}
-              </span>
-            </div>
-            <div className="down">
-              <span>2 rooms </span>
-              <span>1 adult</span>
-              <span>1 Night</span>
-
-              <Button title="Change" />
-            </div>
-          </div> */}
-          
+        <div className="left">          
           <div className="booking-info">
-
           <div className="booking-detail">
             <h3 >Your booking details</h3>
             <div className="duration">
@@ -111,7 +91,6 @@ export default function Booking() {
               <span style={{ display: "block" }}> {address}</span>
             </div>
           </div>
-
           <div className="enter-info">
             <h4>Your Details</h4>
             <form>
@@ -134,7 +113,6 @@ export default function Booking() {
               <Button title="Pay at Hotel" />
               <Button title="Pay Now" />
             </form>
-
             <p>
               We use your personal data to process services that you have
               applied for, to contact you with newsletters and deal offers, and
