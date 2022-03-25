@@ -13,24 +13,23 @@ export default function Login() {
     reset: resetPassword,
   } = useInput("");
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log( email, password );
+    console.log(email, password);
     resetEmail();
     resetPassword();
   };
 
   return (
     <div className="login">
-      <div className="left"><h1>Welcome Back</h1></div>
+      <div className="left">
+        <h1>Welcome Back</h1>
+      </div>
       <div className="right">
         <h1>Login</h1>
         <h3>Login to your account</h3>
-      
 
         <form onSubmit={handleSubmit}>
-
           <div className="auth-form-item">
             <label>Email:</label>
             <input
@@ -49,11 +48,11 @@ export default function Login() {
             />
           </div>
 
-            <Button title="Login" type="submit" />
+          <Button title="Login" type="submit" className="sec" />
         </form>
 
         <b>
-        Dont have an account <Link to="/register">Register</Link>
+          Dont have an account <Link to="/register">Register</Link>
         </b>
       </div>
     </div>

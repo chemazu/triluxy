@@ -103,7 +103,7 @@ export default function Banner() {
         </div>
       </form>
       {/* <input type="submit" placeholder="Check in" value="search" /> */}
-      <Button title="Find Hotel" onClick={handleSubmit} />
+      <Button title="Find Hotel" className="sec" onClick={handleSubmit} />
     </div>
   );
 }

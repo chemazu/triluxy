@@ -1,10 +1,20 @@
-button{
-    // height: 36px;
-    min-width: 90px;
-    padding: 10px;
-    outline: none;
-    border :0px;
-    &:hover{
-        cursor: pointer;
-    }
+$pry: #0071c2;
+button {
+  font-weight: 500 !important;
+  letter-spacing: 1.5px;
+  min-width: 90px;
+  padding: 10px;
+  outline: none;
+  border: 0px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.pry {
+  background: #fff;
+  color: $pry;
+}
+.sec {
+  background: $pry;
+  color: #fff;
 }

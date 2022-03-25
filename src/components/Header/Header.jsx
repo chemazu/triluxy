@@ -3,14 +3,11 @@ import Button from "../Button";
 import Logo from "../Logo/Logo";
 import menu from "../../imgs/menu-icon.svg";
 import close from "../../imgs/close.svg";
-
 import "./Header.scss";
 import { Link } from "react-router-dom";
-import useSearch from "../../hooks/search-hook";
 
 export default function Header() {
   const [showResults, setShowResults] = React.useState(false);
-
   const openMenu = () => {
     setShowResults(true);
   };
@@ -21,19 +18,13 @@ export default function Header() {
     <div className="header">
       <div className="nav">
         <Logo />
-
-        <div className="menu-items">
-          <p>Stays</p>
-          <p>Flights</p>
-          <p>Car Rentals</p>
-          <p>Restaurant</p>
-        </div>
+        <div className="menu-items"></div>
         <div className="auth">
           <Link to="/login">
-            <Button title="Login" />
+            <Button title="Login" className="pry" />
           </Link>
           <Link to="/register">
-            <Button title="Register" />
+            <Button title="Register" className="pry" />
           </Link>
         </div>
       </div>
@@ -56,10 +47,10 @@ export default function Header() {
             </div>
             <div className="auth">
               <Link to="/login">
-                <Button title="Login" />
+                <Button title="Login" onClick={closeMenu} />
               </Link>
               <Link to="/register">
-                <Button title="Register" />
+                <Button title="Register" onClick={closeMenu} />
               </Link>
             </div>
           </div>

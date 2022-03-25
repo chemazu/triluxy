@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import { useInput } from "../../hooks/input-hook";
 import "./style.scss";
-
 export default function Register() {
   const { value: name, change: changeName, reset: resetName } = useInput("");
   const { value: email, change: changeEmail, reset: resetEmail } = useInput("");
-
   const {
     value: password,
     change: changePassword,
@@ -72,12 +70,14 @@ export default function Register() {
             />
           </div>
 
-          <div className="agreement" style={{ height: "60px" }}>
-            <p>
-              {" "}
-              <input type="checkbox" />i agree to the <b>terms and condition</b>
-            </p>
-            <Button title="Create Account" type="submit" />
+          <div className="agreement">
+            <div>
+              <input type="checkbox" />
+              <p>
+                I agree to the <b>terms and condition</b>
+              </p>
+            </div>
+            <Button title="Create Account" type="submit" className="sec" />
           </div>
         </form>
 
